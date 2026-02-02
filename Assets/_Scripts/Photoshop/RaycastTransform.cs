@@ -14,6 +14,7 @@ public class RaycastTransform : MonoBehaviour
     [SerializeField] private Transform handOffset;
 
     private Ray ray;
+    private readonly RaycastHit[] hits = new RaycastHit[1];
     PointerEventData data;
 
     GameObject hoverTarget;
@@ -36,14 +37,14 @@ public class RaycastTransform : MonoBehaviour
 
         handOffset.localPosition = Input.GetMouseButton(0) ? new Vector3(0, 0, 0) : new Vector3(0, 0, -0.1f);
 
-        if (!Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.RaycastNonAlloc(ray, hits) == 0)
             return false;
 
-        handRoot.position = hit.point;
+        handRoot.position = hits[0].point;
 
         ScreenPosition = new Vector2(
-            hit.textureCoord.x * 1920,
-            hit.textureCoord.y * 1080
+            hits[0].textureCoord.x * 1920,
+            hits[0].textureCoord.y * 1080
         );
 
         return true;

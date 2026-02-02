@@ -123,8 +123,9 @@ public class CharacterController : MonoBehaviour
     {
         anim.SetTrigger(_Scared);
 
-        await UniTask.WaitForSeconds(3);
+        await UniTask.WaitForSeconds(2.5f);
 
-        anim.SetTrigger(_Idle);
+        if (GameManager.IsPlaying)
+            anim.SetTrigger(_Idle);
     }
 }
