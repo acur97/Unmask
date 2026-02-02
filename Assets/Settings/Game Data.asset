@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 152abbda6510a0647acdf34974496614, type: 3}
+  m_Name: Game Data
+  m_EditorClassIdentifier: Assembly-CSharp::GameData
+  limiter_timeToCpu: 4
+  limiter_textCpu: '<color=red><b>"Caution"</b></color> excessive CPU usage!
+
+
+
+    Wait
+    for it to cool down'
+  limiter_speedToHdd: 8
+  limiter_textHdd: '<color=red><b>"Heads up"</b></color> your hard drive isn''t that
+    fast!
+
+
+
+    Wait for it to cool down'
+  limiter_distanceToRam: 200
+  limiter_textRam: '<color=red><b>"Danger"</b></color> you filled the RAM, patience!
+
+
+
+    Wait
+    for it to cool down'
+  limiter_time: 60
+  bugs_closeDistance: 1.5
+  bugs_contactDistance: 0.5
+  character_speed: 0.06
+  levels:
+  - name: Tutorial
+    image: {fileID: 21300000, guid: c48a3f59522c7da459b92067424f51f7, type: 3}
+    patterns:
+    - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
+    timer: 360
+  - name: Frog
+    image: {fileID: 21300000, guid: 2979f6c2491ca7041b3a893d9ae4f8ec, type: 3}
+    patterns:
+    - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
+    timer: 240
+  - name: Land
+    image: {fileID: 21300000, guid: ce725e0cd27d61c4cb70708841719eeb, type: 3}
+    patterns:
+    - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
+    timer: 120
+  - name: Space Cat
+    image: {fileID: 21300000, guid: be4ad512c30565e4a89eba9ac9efd6d8, type: 3}
+    patterns:
+    - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
+    timer: 60
