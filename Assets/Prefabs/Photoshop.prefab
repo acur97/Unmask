@@ -1032,6 +1032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec10db7f62ab7a4e8564d10a15922d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhotoshopInterface
+  realImage1: {fileID: 289160993528195220}
+  realImage2: {fileID: 1112084095371150831}
   tmp_sliderSize: {fileID: 4559581675081253853}
   toolsUpPopupRect: {fileID: 4954507283537381728}
   toolsUpPopup: {fileID: 4124086749799154003}

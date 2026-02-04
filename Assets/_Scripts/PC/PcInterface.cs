@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PcInterface : MonoBehaviour
 {
@@ -21,10 +22,26 @@ public class PcInterface : MonoBehaviour
     [Space]
     [SerializeField] private GameObject offOptions;
 
+    [Header("Audio")]
+    [SerializeField] private Slider audio_slider;
+    [SerializeField] private GameObject audio_panel;
+    [SerializeField] private Image audio_icon;
+    [SerializeField] private Sprite audio_Sound;
+    [SerializeField] private Sprite audio_Mute;
+
     private void Awake()
     {
+        GameManager.OnPrepareLevel += OpenPhotoshop;
+
         OffMenu(false);
         startMenu.gameObject.SetActive(false);
+        AudioOptiones(false);
+        audio_slider.value = 1;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnPrepareLevel -= OpenPhotoshop;
     }
 
     private void Start()
@@ -45,24 +62,25 @@ public class PcInterface : MonoBehaviour
         }
     }
 
+    private void OpenPhotoshop(int _)
+    {
+        PhotoshopApp(true);
+    }
+
     public void PhotoshopApp(bool on)
     {
+        fotoshopIcon.SetActive(on);
+
         if (on)
         {
             fotoshopAnim.SetTrigger(Hash._Open);
         }
         else
         {
-            //GameManager.instance.Closelevel();
-            Debug.LogWarning("CERRAR NIVEL");
+            GameManager.instance.CloseLevel();
 
             fotoshopAnim.SetTrigger(Hash._Close);
         }
-    }
-
-    public void PhotoshopIcon(bool on)
-    {
-        fotoshopIcon.SetActive(on);
     }
 
     public void EspotifyIcon(bool on)
@@ -96,5 +114,29 @@ public class PcInterface : MonoBehaviour
     public void OffMenu(bool on)
     {
         offOptions.SetActive(on);
+    }
+
+    public void AudioOptiones()
+    {
+        AudioOptiones(!audio_panel.activeSelf);
+    }
+
+    public void AudioOptiones(bool on)
+    {
+        audio_panel.SetActive(on);
+    }
+
+    public void SetAudioVolume(float value)
+    {
+        AudioListener.volume = value;
+
+        if (value == 0)
+        {
+            audio_icon.sprite = audio_Mute;
+        }
+        else
+        {
+            audio_icon.sprite = audio_Sound;
+        }
     }
 }

@@ -1,8 +1,13 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PhotoshopInterface : MonoBehaviour
 {
+    [SerializeField] private Image realImage1;
+    [SerializeField] private Image realImage2;
+
+    [Space]
     [SerializeField] private TextMeshProUGUI tmp_sliderSize;
 
     [Space]
@@ -13,6 +18,12 @@ public class PhotoshopInterface : MonoBehaviour
     {
         toolsUpPopup.gameObject.SetActive(false);
         toolsUpPopup.alpha = 0;
+    }
+
+    public void Init(Sprite image)
+    {
+        realImage1.sprite = image;
+        realImage2.sprite = image;
     }
 
     public void UpdateTextSize(float value)

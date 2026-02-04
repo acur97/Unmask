@@ -42,19 +42,19 @@ MonoBehaviour:
     image: {fileID: 21300000, guid: c48a3f59522c7da459b92067424f51f7, type: 3}
     patterns:
     - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
-    timer: 360
+    timer: 180
   - name: Frog
     image: {fileID: 21300000, guid: 2979f6c2491ca7041b3a893d9ae4f8ec, type: 3}
     patterns:
     - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
-    timer: 240
+    timer: 135
   - name: Land
     image: {fileID: 21300000, guid: ce725e0cd27d61c4cb70708841719eeb, type: 3}
     patterns:
     - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
-    timer: 120
+    timer: 90
   - name: Space Cat
     image: {fileID: 21300000, guid: be4ad512c30565e4a89eba9ac9efd6d8, type: 3}
     patterns:
     - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
-    timer: 60
+    timer: 45

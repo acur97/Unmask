@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -31,6 +32,9 @@ public class TilemapBrushes : MonoBehaviour
     [Space]
     [SerializeField] private Vector2 screenOffset;
     [SerializeField] private Vector2 screenOffsetSize;
+
+    [Space]
+    [SerializeField] private PolygonCollider2D photoshopBorders;
 
     [Space]
     private Vector2 centeredMousePos = Vector2.zero;
@@ -67,14 +71,33 @@ public class TilemapBrushes : MonoBehaviour
     {
         GameManager.OnWinLevel += ClearAllTiles;
         GameManager.OnPrepareLevel += StartLimits;
+        GameManager.OnCloseLevel += CloseLevel;
 
         whiteWin.gameObject.SetActive(false);
         whiteWin.CrossFadeAlpha(1, 0, true);
     }
 
+    private void OnDestroy()
+    {
+        GameManager.OnWinLevel -= ClearAllTiles;
+        GameManager.OnPrepareLevel -= StartLimits;
+        GameManager.OnCloseLevel -= CloseLevel;
+    }
+
     private void StartLimits(int level)
     {
         timeLeft = data.levels[level].timer;
+
+        photoshopBorders.enabled = true;
+        grid.gameObject.SetActive(true);
+
+        RefillTiles();
+    }
+
+    private void CloseLevel()
+    {
+        photoshopBorders.enabled = false;
+        grid.gameObject.SetActive(false);
     }
 
     private void Start()

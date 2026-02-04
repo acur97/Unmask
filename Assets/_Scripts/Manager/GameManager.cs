@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,23 +11,44 @@ public class GameManager : MonoBehaviour
     public static bool IsPlaying;
     public static Action OnWinLevel;
     public static Action OnLoseLevel;
+    public static Action OnCloseLevel;
 
     [SerializeField] private GameData data;
+
+    [Space]
     [SerializeField] private PcInterface pc;
     [SerializeField] private PhotoshopInterface photoshop;
 
-    [Header("References")]
-    [SerializeField] private Image realImage1;
-    [SerializeField] private Image realImage2;
+    [Space]
+    [SerializeField] private Animator tabletAnim;
+
+    [Space]
+    [SerializeField] private IconLevel iconPrefab;
+    private IconLevel icon;
+    [SerializeField] private Transform iconParent;
 
     private void Awake()
     {
         instance = this;
+
+        for (int i = 0; i < data.levels.Length; i++)
+        {
+            icon = Instantiate(iconPrefab, iconParent);
+            
+            if (i == 1)
+            {
+                icon.Set(i, true);
+            }
+            else
+            {
+                icon.Set(i, false);
+            }
+        }
     }
 
-    private void Start()
+    public void ResetScene()
     {
-        StartLevel(1);
+        SceneManager.LoadScene(2);
     }
 
     public void WinLevel()
@@ -39,16 +60,21 @@ public class GameManager : MonoBehaviour
     public void LoseLevel()
     {
         IsPlaying = false;
-
-        Debug.LogError("PANTALLAZO AZUL !!!");
-
         OnLoseLevel?.Invoke();
+
+        tabletAnim.SetTrigger(Hash._Close);
     }
 
-    private void StartLevel(int level)
+    public void CloseLevel()
     {
-        realImage1.sprite = data.levels[level].image;
-        realImage2.sprite = data.levels[level].image;
+        IsPlaying = false;
+
+        OnCloseLevel?.Invoke();
+    }
+
+    public void StartLevel(int level)
+    {
+        photoshop.Init(data.levels[level].image);
 
         OnPrepareLevel?.Invoke(level);
         OnStartLevel?.Invoke();

@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -38,11 +39,15 @@ public class PlayerController : MonoBehaviour
         GameManager.OnStartLevel += StartLevel;
         GameManager.OnWinLevel += WinLevel;
         GameManager.OnLoseLevel += LoseLevel;
+        GameManager.OnCloseLevel += CloseLevel;
     }
 
     private void OnDestroy()
     {
         GameManager.OnStartLevel -= StartLevel;
+        GameManager.OnWinLevel -= WinLevel;
+        GameManager.OnLoseLevel -= LoseLevel;
+        GameManager.OnCloseLevel -= CloseLevel;
     }
 
     private void StartLevel()
@@ -66,6 +71,13 @@ public class PlayerController : MonoBehaviour
         canMove = false;
         move = Vector2.zero;
         anim.SetTrigger(_Dead);
+    }
+
+    private void CloseLevel()
+    {
+        canMove = true;
+        move = Vector2.zero;
+        anim.SetTrigger(_Idle);
     }
 
     private void Update()
@@ -116,7 +128,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameManager.instance.WinLevel();
+        if (GameManager.IsPlaying)
+            GameManager.instance.WinLevel();
     }
 
     public async UniTaskVoid Set_Scared()

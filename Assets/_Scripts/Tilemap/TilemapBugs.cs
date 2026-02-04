@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class TilemapBugs : MonoBehaviour
@@ -16,7 +17,6 @@ public class TilemapBugs : MonoBehaviour
     private int bugs;
     private Vector2[] bugsPosition;
     private float[] distancePerBug;
-    private float randomZ;
     private Transform bug;
 
     private enum BugDistanceStatus
@@ -32,15 +32,24 @@ public class TilemapBugs : MonoBehaviour
     private void Awake()
     {
         GameManager.OnPrepareLevel += InstancePatterns;
-        GameManager.OnWinLevel += WinLevel;
+        GameManager.OnWinLevel += CloseLevel;
+        GameManager.OnCloseLevel += CloseLevel;
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.OnPrepareLevel -= InstancePatterns;
+        GameManager.OnWinLevel -= CloseLevel;
+        GameManager.OnCloseLevel -= CloseLevel;
     }
 
     private void InstancePatterns(int level)
     {
+        root.gameObject.SetActive(false);
+
         Instantiate(data.levels[level].patterns[Random.Range(0, data.levels[level].patterns.Length)], root);
 
-        randomZ = Random.Range(0f, 360f);
-        root.localEulerAngles = new Vector3(0, 0, randomZ);
+        root.localEulerAngles = new Vector3(0, 0, Random.Range(0f, 360f));
 
         bugs = root.GetChild(0).childCount;
         bugsPosition = new Vector2[bugs];
@@ -53,10 +62,18 @@ public class TilemapBugs : MonoBehaviour
             bug.localEulerAngles = new Vector3(0, 0, Random.Range(0f, 360f));
         }
 
+        DelayInitBugs().Forget();
+    }
+
+    private async UniTaskVoid DelayInitBugs()
+    {
+        await UniTask.WaitForSeconds(0.25f);
+
+        root.gameObject.SetActive(true);
         started = true;
     }
 
-    private void WinLevel()
+    private void CloseLevel()
     {
         root.gameObject.SetActive(false);
     }
