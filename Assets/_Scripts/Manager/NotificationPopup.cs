@@ -7,8 +7,6 @@ public class NotificationPopup : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private TextMeshProUGUI title;
 
-    private readonly int _Close = Animator.StringToHash("Close");
-
     public void Init(string text)
     {
         title.text = text;
@@ -20,7 +18,7 @@ public class NotificationPopup : MonoBehaviour
     {
         await UniTask.WaitForSeconds(3);
 
-        anim.SetTrigger(_Close);
+        anim.SetTrigger(Hash._Close);
     }
 
     public void Destroy()

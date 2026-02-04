@@ -116,7 +116,7 @@ public class TilemapBugs : MonoBehaviour
                     if (debugLogs)
                         Debug.LogWarning("Close!");
 
-                    CharacterController.instance.Set_Scared().Forget();
+                    PlayerController.instance.Set_Scared().Forget();
                     break;
 
                 case BugDistanceStatus.Contact:

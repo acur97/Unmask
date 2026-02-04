@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class TilemapBrushes : MonoBehaviour
 {
     [SerializeField] private GameData data;
+    [SerializeField] private Tilemap prefab;
 
     [Space]
     [SerializeField] private bool debugLogs;
@@ -291,5 +292,14 @@ public class TilemapBrushes : MonoBehaviour
         whiteWin.CrossFadeAlpha(0, 1, false);
 
         tilemap.ClearAllTiles();
+    }
+
+    private void RefillTiles()
+    {
+        Destroy(tilemap.gameObject);
+
+        tilemap = Instantiate(prefab, grid.transform);
+        collider2d = tilemap.GetComponent<TilemapCollider2D>();
+        composite = tilemap.GetComponent<CompositeCollider2D>();
     }
 }

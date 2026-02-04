@@ -1,6 +1,12 @@
 using System;
 using UnityEngine;
 
+public static class Hash
+{
+    public static readonly int _Open = Animator.StringToHash("Open");
+    public static readonly int _Close = Animator.StringToHash("Close");
+}
+
 [Serializable]
 public struct Level
 {
@@ -29,6 +35,6 @@ public class GameData : ScriptableObject
     [Header("Character")]
     public float character_speed;
 
-    [Header("Levels")]
+    [Space]
     public Level[] levels;
 }

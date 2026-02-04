@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public static Action OnLoseLevel;
 
     [SerializeField] private GameData data;
+    [SerializeField] private PcInterface pc;
+    [SerializeField] private PhotoshopInterface photoshop;
 
     [Header("References")]
     [SerializeField] private Image realImage1;
