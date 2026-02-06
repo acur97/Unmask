@@ -56,6 +56,7 @@ public class TilemapBrushes : MonoBehaviour
 
     private int minutes;
     private int secs;
+    private int prevSecs = -1;
 
     private enum LimiterStatus
     {
@@ -87,8 +88,9 @@ public class TilemapBrushes : MonoBehaviour
     private void StartLimits(int level)
     {
         timeLeft = data.levels[level].timer;
+        prevSecs = -1;
 
-        photoshopBorders.enabled = true;
+    photoshopBorders.enabled = true;
         grid.gameObject.SetActive(true);
 
         RefillTiles();
@@ -105,25 +107,18 @@ public class TilemapBrushes : MonoBehaviour
         composite.GenerateGeometry();
     }
 
-    private string FormatTime(float seconds)
-    {
-        minutes = Mathf.FloorToInt(seconds / 60f);
-        secs = Mathf.FloorToInt(seconds % 60f);
-
-        return $"Time left: {minutes}:{secs:00}";
-    }
-
     private void Update()
     {
         if (!GameManager.IsPlaying)
             return;
 
-        timeLeft -= Time.deltaTime;
-        timer.text = FormatTime(timeLeft);
-
-        if (timeLeft < 0)
+        if (timeLeft > 0)
         {
-            //timer.text = FormatTime(0);
+            timeLeft -= Time.deltaTime;
+            FormatTime();
+        }
+        else
+        {
             timer.text = "ERROR 404";
 
             GameManager.instance.LoseLevel();
@@ -196,7 +191,7 @@ public class TilemapBrushes : MonoBehaviour
                 limitHdd = true;
             }
 
-            distanceToRam += speedToHdd;
+            distanceToRam += speedToHdd + (BrushSize * 0.2f);
             if (distanceToRam > data.limiter_distanceToRam)
             {
                 limitRam = true;
@@ -230,6 +225,22 @@ public class TilemapBrushes : MonoBehaviour
         }
 
         CheckStatus();
+    }
+
+    private void FormatTime()
+    {
+        minutes = Mathf.FloorToInt(timeLeft / 60f);
+        secs = Mathf.FloorToInt(timeLeft % 60f);
+
+        if (secs != prevSecs)
+        {
+            prevSecs = secs;
+            timer.SetText($"Time left: {minutes}:{secs:00}");
+        }
+        else
+        {
+            prevSecs = secs;
+        }
     }
 
     private void CheckStatus()

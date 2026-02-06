@@ -1,9 +1,11 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static bool readyIntro = false;
     public static GameManager instance;
 
     public static Action<int> OnPrepareLevel;
@@ -14,6 +16,7 @@ public class GameManager : MonoBehaviour
     public static Action OnCloseLevel;
 
     [SerializeField] private GameData data;
+    [SerializeField] private Graphic blackFade;
 
     [Space]
     [SerializeField] private PcInterface pc;
@@ -31,10 +34,22 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 
+        if (readyIntro)
+        {
+            readyIntro = false;
+
+            blackFade.color = Color.black;
+            blackFade.CrossFadeAlpha(0, 1, false);
+        }
+        else
+        {
+            blackFade.CrossFadeAlpha(0, 0, false);
+        }
+
         for (int i = 0; i < data.levels.Length; i++)
         {
             icon = Instantiate(iconPrefab, iconParent);
-            
+
             if (i == 1)
             {
                 icon.Set(i, true);
@@ -48,7 +63,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetScene()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
     public void WinLevel()
