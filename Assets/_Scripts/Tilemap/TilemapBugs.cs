@@ -53,7 +53,12 @@ public class TilemapBugs : MonoBehaviour
 
         bugs = root.GetChild(0).childCount;
         bugsPosition = new Vector2[bugs];
+
         distancePerBug = new float[bugs];
+        for (int i = 0; i < distancePerBug.Length; i++)
+        {
+            distancePerBug[i] = 1000f;
+        }
 
         for (int i = 0; i < bugs; i++)
         {
@@ -70,6 +75,7 @@ public class TilemapBugs : MonoBehaviour
         await UniTask.WaitForSeconds(0.25f);
 
         root.gameObject.SetActive(true);
+
         started = true;
     }
 
@@ -85,6 +91,9 @@ public class TilemapBugs : MonoBehaviour
 
         closeEvent = false;
         contactEvent = false;
+
+        if (!TilemapBrushes.CanDraw)
+            return;
 
         for (int i = 0; i < bugs; i++)
         {

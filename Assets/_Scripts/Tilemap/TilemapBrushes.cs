@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -90,7 +89,7 @@ public class TilemapBrushes : MonoBehaviour
         timeLeft = data.levels[level].timer;
         prevSecs = -1;
 
-    photoshopBorders.enabled = true;
+        photoshopBorders.enabled = true;
         grid.gameObject.SetActive(true);
 
         RefillTiles();

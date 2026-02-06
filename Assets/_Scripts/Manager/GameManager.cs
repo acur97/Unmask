@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public static Action<int> OnPrepareLevel;
+    public static int CurrentLevel;
     public static Action OnStartLevel;
     public static bool IsPlaying;
     public static Action OnWinLevel;
@@ -27,8 +28,9 @@ public class GameManager : MonoBehaviour
 
     [Space]
     [SerializeField] private IconLevel iconPrefab;
-    private IconLevel icon;
+    private IconLevel[] icons;
     [SerializeField] private Transform iconParent;
+    private int childIcon;
 
     private void Awake()
     {
@@ -46,17 +48,18 @@ public class GameManager : MonoBehaviour
             blackFade.CrossFadeAlpha(0, 0, false);
         }
 
-        for (int i = 0; i < data.levels.Length; i++)
+        icons = new IconLevel[data.levels.Length];
+        for (int i = 0; i < icons.Length; i++)
         {
-            icon = Instantiate(iconPrefab, iconParent);
+            icons[i] = Instantiate(iconPrefab, iconParent);
 
             if (i == 1)
             {
-                icon.Set(i, true);
+                icons[i].Set(i, true);
             }
             else
             {
-                icon.Set(i, false);
+                icons[i].Set(i, false);
             }
         }
     }
@@ -70,6 +73,12 @@ public class GameManager : MonoBehaviour
     {
         IsPlaying = false;
         OnWinLevel?.Invoke();
+
+        childIcon = CurrentLevel + 1;
+        if (childIcon < icons.Length)
+        {
+            icons[childIcon].ClearIcon();
+        }
     }
 
     public void LoseLevel()
@@ -89,9 +98,11 @@ public class GameManager : MonoBehaviour
 
     public void StartLevel(int level)
     {
-        photoshop.Init(data.levels[level].image);
+        CurrentLevel = level;
 
-        OnPrepareLevel?.Invoke(level);
+        photoshop.Init(data.levels[CurrentLevel].image);
+
+        OnPrepareLevel?.Invoke(CurrentLevel);
         OnStartLevel?.Invoke();
         IsPlaying = true;
     }

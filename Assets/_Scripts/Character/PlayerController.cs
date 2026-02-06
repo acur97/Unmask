@@ -1,5 +1,4 @@
 using Cysharp.Threading.Tasks;
-using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -17,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector2 startPos;
     [SerializeField] private float endXpos;
 
-    private bool canMove = false;
+    private bool canMove = true;
     private Vector2 move;
 
     private const string _Horizontal = "Horizontal";
@@ -27,7 +26,7 @@ public class PlayerController : MonoBehaviour
     private readonly int _Side = Animator.StringToHash("Side");
 
     private readonly int _Idle = Animator.StringToHash("Idle");
-    private readonly int _Talk = Animator.StringToHash("Talk");
+    private readonly int _IsTalking = Animator.StringToHash("IsTalking");
     private readonly int _Happy = Animator.StringToHash("Happy");
     private readonly int _Scared = Animator.StringToHash("Scared");
     private readonly int _Dead = Animator.StringToHash("Dead");
@@ -140,5 +139,10 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.IsPlaying)
             anim.SetTrigger(_Idle);
+    }
+
+    public void SetTalking(bool on)
+    {
+        anim.SetBool(_IsTalking, on);
     }
 }

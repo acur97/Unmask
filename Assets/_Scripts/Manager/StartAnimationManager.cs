@@ -1,12 +1,16 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class StartAnimationManager : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private Graphic nextText;
+
+    [Space]
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip[] clips;
 
     private bool canNext = false;
     private int count;
@@ -21,8 +25,17 @@ public class StartAnimationManager : MonoBehaviour
         await UniTask.NextFrame();
         await UniTask.WaitForSeconds(1);
 
-        anim.SetTrigger(Hash._Next);
+        SetNext();
         GameManager.readyIntro = true;
+    }
+
+    private void SetNext()
+    {
+        anim.SetTrigger(Hash._Next);
+
+        source.Stop();
+        source.clip = clips[count];
+        source.Play();
     }
 
     public void Next()
@@ -30,7 +43,7 @@ public class StartAnimationManager : MonoBehaviour
         canNext = false;
 
         nextText.CrossFadeAlpha(0, 0.15f, false);
-        anim.SetTrigger(Hash._Next);
+        SetNext();
     }
 
     public void OnFinish()

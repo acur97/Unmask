@@ -35,4 +35,10 @@ public class IconLevel : MonoBehaviour
             Debug.LogWarning("Mensaje del antivirus, de cuidado que aun esta muy corrupto!");
         }
     }
+
+    public void ClearIcon()
+    {
+        isAvalible = true;
+        anim.gameObject.SetActive(false);
+    }
 }
