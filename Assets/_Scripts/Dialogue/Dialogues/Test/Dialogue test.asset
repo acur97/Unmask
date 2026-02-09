@@ -36,6 +36,13 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
+  - dialogue: Super dialogo 4
+    onStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinish:
+      m_PersistentCalls:
+        m_Calls: []
   onEnd:
     m_PersistentCalls:
       m_Calls: []

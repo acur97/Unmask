@@ -62,7 +62,7 @@ public class CharacterDialogue : MonoBehaviour
         if (!inDialogue)
             return;
 
-        if (Input.anyKeyDown)
+        if (!currentDialogue.isRandom && Input.anyKeyDown)
         {
             if (isAnimating)
             {
@@ -117,6 +117,9 @@ public class CharacterDialogue : MonoBehaviour
         token?.Cancel();
         token = new CancellationTokenSource();
         LeanTween.cancel(tweenId);
+
+        //panelRoot.pivot = Vector2.zero;
+        //panelRoot.anchoredPosition = Vector2.zero;
 
         inDialogue = true;
 

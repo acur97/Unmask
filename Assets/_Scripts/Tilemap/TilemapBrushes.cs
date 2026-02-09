@@ -75,6 +75,8 @@ public class TilemapBrushes : MonoBehaviour
 
         whiteWin.gameObject.SetActive(false);
         whiteWin.CrossFadeAlpha(1, 0, true);
+
+        CloseLevel();
     }
 
     private void OnDestroy()

@@ -19,18 +19,6 @@ public class PlayerController : MonoBehaviour
     private bool canMove = true;
     private Vector2 move;
 
-    private const string _Horizontal = "Horizontal";
-    private const string _Vertical = "Vertical";
-    private readonly int _Front = Animator.StringToHash("Front");
-    private readonly int _Back = Animator.StringToHash("Back");
-    private readonly int _Side = Animator.StringToHash("Side");
-
-    private readonly int _Idle = Animator.StringToHash("Idle");
-    private readonly int _IsTalking = Animator.StringToHash("IsTalking");
-    private readonly int _Happy = Animator.StringToHash("Happy");
-    private readonly int _Scared = Animator.StringToHash("Scared");
-    private readonly int _Dead = Animator.StringToHash("Dead");
-
     private void Awake()
     {
         instance = this;
@@ -60,7 +48,7 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         move = Vector2.zero;
-        anim.SetTrigger(_Happy);
+        anim.SetTrigger(Hash._Happy);
 
         LeanTween.moveLocalX(gameObject, endXpos, 1);
     }
@@ -69,14 +57,14 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         move = Vector2.zero;
-        anim.SetTrigger(_Dead);
+        anim.SetTrigger(Hash._Dead);
     }
 
     private void CloseLevel()
     {
         canMove = true;
         move = Vector2.zero;
-        anim.SetTrigger(_Idle);
+        anim.SetTrigger(Hash._Idle);
     }
 
     private void Update()
@@ -84,39 +72,39 @@ public class PlayerController : MonoBehaviour
         if (!canMove)
             return;
 
-        move = new Vector2(Input.GetAxisRaw(_Horizontal), Input.GetAxisRaw(_Vertical));
+        move = new Vector2(Input.GetAxisRaw(Hash._Horizontal), Input.GetAxisRaw(Hash._Vertical));
 
         if (move.x < 0)
         {
-            anim.SetBool(_Front, false);
-            anim.SetBool(_Back, false);
-            anim.SetBool(_Side, true);
+            anim.SetBool(Hash._Front, false);
+            anim.SetBool(Hash._Back, false);
+            anim.SetBool(Hash._Side, true);
             sprite.flipX = false;
         }
         else if (move.x > 0)
         {
-            anim.SetBool(_Front, false);
-            anim.SetBool(_Back, false);
-            anim.SetBool(_Side, true);
+            anim.SetBool(Hash._Front, false);
+            anim.SetBool(Hash._Back, false);
+            anim.SetBool(Hash._Side, true);
             sprite.flipX = true;
         }
         else if (move.y > 0)
         {
-            anim.SetBool(_Front, false);
-            anim.SetBool(_Back, true);
-            anim.SetBool(_Side, false);
+            anim.SetBool(Hash._Front, false);
+            anim.SetBool(Hash._Back, true);
+            anim.SetBool(Hash._Side, false);
         }
         else if (move.y < 0)
         {
-            anim.SetBool(_Front, true);
-            anim.SetBool(_Back, false);
-            anim.SetBool(_Side, false);
+            anim.SetBool(Hash._Front, true);
+            anim.SetBool(Hash._Back, false);
+            anim.SetBool(Hash._Side, false);
         }
         else
         {
-            anim.SetBool(_Front, false);
-            anim.SetBool(_Back, false);
-            anim.SetBool(_Side, false);
+            anim.SetBool(Hash._Front, false);
+            anim.SetBool(Hash._Back, false);
+            anim.SetBool(Hash._Side, false);
         }
     }
 
@@ -133,16 +121,16 @@ public class PlayerController : MonoBehaviour
 
     public async UniTaskVoid Set_Scared()
     {
-        anim.SetTrigger(_Scared);
+        anim.SetTrigger(Hash._Scared);
 
         await UniTask.WaitForSeconds(2.5f);
 
         if (GameManager.IsPlaying)
-            anim.SetTrigger(_Idle);
+            anim.SetTrigger(Hash._Idle);
     }
 
     public void SetTalking(bool on)
     {
-        anim.SetBool(_IsTalking, on);
+        anim.SetBool(Hash._IsTalking, on);
     }
 }
