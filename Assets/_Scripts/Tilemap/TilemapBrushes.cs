@@ -75,9 +75,6 @@ public class TilemapBrushes : MonoBehaviour
 
         BrushSize = 1;
 
-        whiteWin.gameObject.SetActive(false);
-        whiteWin.CrossFadeAlpha(1, 0, true);
-
         CloseLevel();
     }
 
@@ -86,6 +83,19 @@ public class TilemapBrushes : MonoBehaviour
         GameManager.OnWinLevel -= ClearAllTiles;
         GameManager.OnPrepareLevel -= StartLimits;
         GameManager.OnCloseLevel -= CloseLevel;
+    }
+
+    private void ClearAllTiles()
+    {
+        SetWinWhite(true, 0, 1);
+
+        tilemap.ClearAllTiles();
+    }
+
+    private void SetWinWhite(bool on, float alpha, float time)
+    {
+        whiteWin.gameObject.SetActive(on);
+        whiteWin.CrossFadeAlpha(alpha, time, false);
     }
 
     private void StartLimits(int level)
@@ -97,12 +107,25 @@ public class TilemapBrushes : MonoBehaviour
         grid.gameObject.SetActive(true);
 
         RefillTiles();
+
+        SetWinWhite(false, 1, 0);
+    }
+
+    private void RefillTiles()
+    {
+        Destroy(tilemap.gameObject);
+
+        tilemap = Instantiate(prefab, grid.transform);
+        collider2d = tilemap.GetComponent<TilemapCollider2D>();
+        composite = tilemap.GetComponent<CompositeCollider2D>();
     }
 
     private void CloseLevel()
     {
         photoshopBorders.enabled = false;
         grid.gameObject.SetActive(false);
+
+        SetWinWhite(false, 1, 0);
     }
 
     private void Start()
@@ -321,22 +344,5 @@ public class TilemapBrushes : MonoBehaviour
 
         tiles = new TileBase[ranges.Count];
         tilemap.SetTiles(ranges.ToArray(), tiles);
-    }
-
-    private void ClearAllTiles()
-    {
-        whiteWin.gameObject.SetActive(true);
-        whiteWin.CrossFadeAlpha(0, 1, false);
-
-        tilemap.ClearAllTiles();
-    }
-
-    private void RefillTiles()
-    {
-        Destroy(tilemap.gameObject);
-
-        tilemap = Instantiate(prefab, grid.transform);
-        collider2d = tilemap.GetComponent<TilemapCollider2D>();
-        composite = tilemap.GetComponent<CompositeCollider2D>();
     }
 }

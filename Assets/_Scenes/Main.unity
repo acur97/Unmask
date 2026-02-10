@@ -1893,6 +1893,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
   root: {fileID: 465118687}
   panelRoot: {fileID: 502289179}
+  horizontalLayoutGroup: {fileID: 502289180}
   canvasGroup: {fileID: 465118689}
   text: {fileID: 1268485505}
   btnExit: {fileID: 1245073333}
@@ -1914,7 +1915,7 @@ MonoBehaviour:
   desktopVolume: 0.75
   photoshop: {fileID: 853074543}
   photoshopVolume: 1
-  fadeTime: 0.8
+  fadeTime: 0.4
   bpm: 150
   ease: 7
 --- !u!1 &462317723

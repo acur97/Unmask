@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -18,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private bool canMove = true;
     private Vector2 move;
+
+    private CancellationTokenSource token;
 
     private void Awake()
     {
@@ -121,9 +124,12 @@ public class PlayerController : MonoBehaviour
 
     public async UniTaskVoid Set_Scared()
     {
+        token?.Cancel();
+        token = new CancellationTokenSource();
+
         anim.SetTrigger(Hash._Scared);
 
-        await UniTask.WaitForSeconds(2.5f);
+        await UniTask.WaitForSeconds(2.5f, cancellationToken: token.Token);
 
         if (GameManager.IsPlaying)
             anim.SetTrigger(Hash._Idle);

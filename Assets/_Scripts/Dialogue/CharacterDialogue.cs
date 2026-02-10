@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterDialogue : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class CharacterDialogue : MonoBehaviour
     [Space]
     [SerializeField] private GameObject root;
     [SerializeField] private RectTransform panelRoot;
+    [SerializeField] private HorizontalLayoutGroup horizontalLayoutGroup;
+
+    [Space]
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TextMeshProUGUI text;
     [SerializeField] private GameObject btnExit;
@@ -79,29 +83,31 @@ public class CharacterDialogue : MonoBehaviour
             // poner a la izquierda
             nextPivot.x = 0;
             nextAnchored.x = 50;
+            horizontalLayoutGroup.childAlignment = TextAnchor.UpperLeft;
         }
         else
         {
             // poner a la derecha
             nextPivot.x = 1;
             nextAnchored.x = -50;
+            horizontalLayoutGroup.childAlignment = TextAnchor.UpperRight;
         }
 
         if (PlayerController.instance.transform.position.y > 1f)
         {
             // poner abajo
             nextPivot.y = 1;
-            nextAnchored.y = -50;
+            nextAnchored.y = Mathf.Lerp(nextAnchored.y, -50, Time.deltaTime * 10);
         }
         else
         {
             // poner arriba
             nextPivot.y = 0;
-            nextAnchored.y = 50;
+            nextAnchored.y = Mathf.Lerp(nextAnchored.y, 50, Time.deltaTime * 10);
         }
 
-        panelRoot.pivot = Vector2.Lerp(panelRoot.pivot, nextPivot, Time.deltaTime * 2.5f);
-        panelRoot.anchoredPosition = Vector2.Lerp(panelRoot.anchoredPosition, nextAnchored, Time.deltaTime * 2.5f);
+        panelRoot.pivot = Vector2.Lerp(panelRoot.pivot, nextPivot, Time.deltaTime * 75);
+        panelRoot.anchoredPosition = nextAnchored;
 
         root.transform.position = Vector2.Lerp(root.transform.position, PlayerController.instance.transform.position, Time.deltaTime * 10);
     }
@@ -242,7 +248,7 @@ public class CharacterDialogue : MonoBehaviour
         }
         else
         {
-            await UniTask.WaitForSeconds(2, cancellationToken: token.Token);
+            await UniTask.WaitForSeconds(1.5f, cancellationToken: token.Token);
 
             FinishConversation();
         }
