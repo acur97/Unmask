@@ -86,25 +86,28 @@ public class TilemapBugs : MonoBehaviour
 
     private void Update()
     {
-        if (!started)
+        if (!GameManager.IsPlaying || !started)
             return;
 
         closeEvent = false;
         contactEvent = false;
 
         if (!TilemapBrushes.CanDraw)
+        {
+            currentStatus = BugDistanceStatus.Far;
             return;
+        }
 
         for (int i = 0; i < bugs; i++)
         {
             distancePerBug[i] = Vector2.Distance(TilemapBrushes.WorldTilePosition, bugsPosition[i]);
 
-            if (distancePerBug[i] < data.bugs_contactDistance)
+            if (distancePerBug[i] < data.bugs_contactDistance + (TilemapBrushes.BrushSize * 0.01f))
             {
                 contactEvent = true;
                 //currentStatus_BugIndex = i;
             }
-            else if (distancePerBug[i] < data.bugs_closeDistance)
+            else if (distancePerBug[i] < data.bugs_closeDistance + (TilemapBrushes.BrushSize * 0.01f))
             {
                 closeEvent = true;
                 //currentStatus_BugIndex = i;
@@ -143,6 +146,7 @@ public class TilemapBugs : MonoBehaviour
                         Debug.LogWarning("Close!");
 
                     PlayerController.instance.Set_Scared().Forget();
+                    CharacterDialogue.instance.Conversation_Scared();
                     break;
 
                 case BugDistanceStatus.Contact:

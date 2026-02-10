@@ -73,6 +73,8 @@ public class TilemapBrushes : MonoBehaviour
         GameManager.OnPrepareLevel += StartLimits;
         GameManager.OnCloseLevel += CloseLevel;
 
+        BrushSize = 1;
+
         whiteWin.gameObject.SetActive(false);
         whiteWin.CrossFadeAlpha(1, 0, true);
 

@@ -34,9 +34,10 @@ MonoBehaviour:
     Wait
     for it to cool down'
   limiter_time: 60
-  bugs_closeDistance: 1.5
-  bugs_contactDistance: 0.5
+  bugs_closeDistance: 1.25
+  bugs_contactDistance: 0.7
   character_speed: 0.06
+  dialogue_scared: {fileID: 11400000, guid: 0c70b6f974e866c489c8d08275a0457e, type: 2}
   levels:
   - name: Tutorial
     image: {fileID: 21300000, guid: c48a3f59522c7da459b92067424f51f7, type: 3}

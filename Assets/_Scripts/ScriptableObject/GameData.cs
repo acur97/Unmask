@@ -50,6 +50,9 @@ public class GameData : ScriptableObject
     [Header("Character")]
     public float character_speed;
 
+    [Header("Conversations")]
+    public DialogueScriptable dialogue_scared;
+
     [Space]
     public Level[] levels;
 }

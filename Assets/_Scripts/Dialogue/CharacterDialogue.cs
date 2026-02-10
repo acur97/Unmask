@@ -7,6 +7,9 @@ public class CharacterDialogue : MonoBehaviour
 {
     public static CharacterDialogue instance;
 
+    [SerializeField] private GameData data;
+
+    [Space]
     [SerializeField] private GameObject root;
     [SerializeField] private RectTransform panelRoot;
     [SerializeField] private CanvasGroup canvasGroup;
@@ -16,9 +19,6 @@ public class CharacterDialogue : MonoBehaviour
 
     private DialogueScriptable currentDialogue;
     [HideInInspector] public bool movementDisabled = false;
-
-    [Space]
-    public DialogueScriptable test;
 
     private string title;
     [HideInInspector] private string titlePart;
@@ -106,10 +106,9 @@ public class CharacterDialogue : MonoBehaviour
         root.transform.position = Vector2.Lerp(root.transform.position, PlayerController.instance.transform.position, Time.deltaTime * 10);
     }
 
-    [ContextMenu("TEST")]
-    public void InitConversationTest()
+    public void Conversation_Scared()
     {
-        InitConversation(test);
+        InitConversation(data.dialogue_scared);
     }
 
     public void InitConversation(DialogueScriptable dialogueScriptable)
@@ -133,7 +132,7 @@ public class CharacterDialogue : MonoBehaviour
 
         root.SetActive(true);
 
-        tweenId = LeanTween.alphaCanvas(canvasGroup, 1, 0.5f).setOnComplete(InitPanel).id;
+        tweenId = LeanTween.alphaCanvas(canvasGroup, 1, 0.25f).setOnComplete(InitPanel).id;
     }
 
     private void InitPanel()
@@ -178,7 +177,7 @@ public class CharacterDialogue : MonoBehaviour
         movementDisabled = false;
         inDialogue = false;
 
-        tweenId = LeanTween.alphaCanvas(canvasGroup, 0, 0.5f).setOnComplete(DisablePanel).id;
+        tweenId = LeanTween.alphaCanvas(canvasGroup, 0, 0.2f).setOnComplete(DisablePanel).id;
     }
 
     private void SetText(string newText)
@@ -230,6 +229,8 @@ public class CharacterDialogue : MonoBehaviour
 
         if (!currentDialogue.isRandom)
         {
+            await UniTask.WaitForSeconds(1, cancellationToken: token.Token);
+
             if (dialogueIndex == currentDialogue.dialogues.Length - 1)
             {
                 btnExit.SetActive(true);
