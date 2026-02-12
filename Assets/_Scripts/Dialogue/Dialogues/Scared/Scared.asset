@@ -57,7 +57,7 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: Tengo miedoo
+  - dialogue: Tengo miedooo TnT
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -65,6 +65,13 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: ":\xB4c"
+    onStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinish:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogue: "Usuario-kun.... detente! ( / \xB0\u0414 \xB0;) /"
     onStart:
       m_PersistentCalls:
         m_Calls: []
