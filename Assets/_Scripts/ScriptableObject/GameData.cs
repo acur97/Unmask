@@ -6,6 +6,8 @@ public static class Hash
     public const string _Horizontal = "Horizontal";
     public const string _Vertical = "Vertical";
 
+    public const string _LevelIndex = "LevelIndex";
+
     public static readonly int _Open = Animator.StringToHash("Open");
     public static readonly int _Close = Animator.StringToHash("Close");
 

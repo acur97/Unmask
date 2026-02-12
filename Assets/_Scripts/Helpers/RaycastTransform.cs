@@ -15,14 +15,21 @@ public class RaycastTransform : MonoBehaviour
 
     private Ray ray;
     private readonly RaycastHit[] hits = new RaycastHit[1];
-    PointerEventData data;
+    private PointerEventData data;
 
-    GameObject hoverTarget;
-    GameObject pressTarget;
-    GameObject dragTarget;
+    private GameObject hoverTarget;
+    private GameObject pressTarget;
+    private GameObject dragTarget;
 
-    bool isDragging;
-    Vector2 pressPosition;
+    private bool isDragging;
+    private Vector2 pressPosition;
+
+    private List<RaycastResult> RaycastUI_results;
+    private List<RaycastResult> HandleMove_results;
+    private List<RaycastResult> BeginPress_results;
+    private GameObject newHover;
+
+    private readonly Vector3 forward1 = new(0, 0, -0.1f);
 
     private void Update()
     {
@@ -35,17 +42,16 @@ public class RaycastTransform : MonoBehaviour
 
         ray = cam.ScreenPointToRay(Input.mousePosition);
 
-        handOffset.localPosition = Input.GetMouseButton(0) ? new Vector3(0, 0, 0) : new Vector3(0, 0, -0.1f);
+        handOffset.localPosition = Input.GetMouseButton(0) ? Vector3.zero : forward1;
 
         if (Physics.RaycastNonAlloc(ray, hits) == 0)
             return false;
 
         handRoot.position = hits[0].point;
 
-        ScreenPosition = new Vector2(
+        ScreenPosition.Set(
             hits[0].textureCoord.x * 1920,
-            hits[0].textureCoord.y * 1080
-        );
+            hits[0].textureCoord.y * 1080);
 
         return true;
     }
@@ -73,11 +79,12 @@ public class RaycastTransform : MonoBehaviour
         data.position = screenPos;
     }
 
+
     private List<RaycastResult> RaycastUI()
     {
-        List<RaycastResult> results = new();
-        EventSystem.current.RaycastAll(data, results);
-        return results;
+        RaycastUI_results = new();
+        EventSystem.current.RaycastAll(data, RaycastUI_results);
+        return RaycastUI_results;
     }
 
     #region Move / Hover
@@ -85,8 +92,8 @@ public class RaycastTransform : MonoBehaviour
     {
         ExecuteEvents.Execute(hoverTarget, data, ExecuteEvents.pointerMoveHandler);
 
-        var results = RaycastUI();
-        GameObject newHover = results.Count > 0 ? results[0].gameObject : null;
+        HandleMove_results = RaycastUI();
+        newHover = HandleMove_results.Count > 0 ? HandleMove_results[0].gameObject : null;
 
         if (newHover == hoverTarget)
             return;
@@ -124,13 +131,13 @@ public class RaycastTransform : MonoBehaviour
 
         EventSystem.current.SetSelectedGameObject(null);
 
-        List<RaycastResult> results = RaycastUI();
-        if (results.Count == 0)
+        BeginPress_results = RaycastUI();
+        if (BeginPress_results.Count == 0)
             return;
 
-        pressTarget = results[0].gameObject;
+        pressTarget = BeginPress_results[0].gameObject;
 
-        data.pointerPressRaycast = results[0];
+        data.pointerPressRaycast = BeginPress_results[0];
         data.pointerPress = pressTarget;
         data.rawPointerPress = pressTarget;
         data.eligibleForClick = true;

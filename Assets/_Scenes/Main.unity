@@ -1859,8 +1859,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   data: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
   blackFade: {fileID: 1752749771}
-  pc: {fileID: 2094531507}
-  photoshop: {fileID: 1898594257}
   tabletAnim: {fileID: 2097302638}
   iconPrefab: {fileID: 1413239686916844995, guid: be13080457f962f41a8f748729520f81, type: 3}
   iconParent: {fileID: 864191777}
@@ -4165,7 +4163,7 @@ RectTransform:
   m_Father: {fileID: 2094531503}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4176,13 +4174,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885359860}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
   m_AspectMode: 4
-  m_AspectRatio: 1.3333333
+  m_AspectRatio: 1.7777778
 --- !u!114 &885359863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4203,7 +4201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7e15ee1be18c3df4ca42e2db16fb31fc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 501742987dbf9a9498d0789f71455b06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8144,17 +8142,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1645813370724786897, guid: fac52b34cfa9c374bab30a96c2cdd3d3, type: 3}
   m_PrefabInstance: {fileID: 2870464173773229430}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1898594257 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8904002583682083157, guid: fac52b34cfa9c374bab30a96c2cdd3d3, type: 3}
-  m_PrefabInstance: {fileID: 2870464173773229430}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec10db7f62ab7a4e8564d10a15922d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PhotoshopInterface
 --- !u!1 &1918952676
 GameObject:
   m_ObjectHideFlags: 0
@@ -10221,6 +10208,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: -408.08002
       objectReference: {fileID: 0}
+    - target: {fileID: 8904002583682083157, guid: fac52b34cfa9c374bab30a96c2cdd3d3, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

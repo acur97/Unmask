@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -57,6 +58,8 @@ public class TilemapBrushes : MonoBehaviour
     private int secs;
     private int prevSecs = -1;
 
+    private bool started = false;
+
     private enum LimiterStatus
     {
         None,
@@ -69,8 +72,8 @@ public class TilemapBrushes : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnWinLevel += ClearAllTiles;
         GameManager.OnPrepareLevel += StartLimits;
+        GameManager.OnWinLevel += ClearAllTiles;
         GameManager.OnCloseLevel += CloseLevel;
 
         BrushSize = 1;
@@ -80,8 +83,8 @@ public class TilemapBrushes : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.OnWinLevel -= ClearAllTiles;
         GameManager.OnPrepareLevel -= StartLimits;
+        GameManager.OnWinLevel -= ClearAllTiles;
         GameManager.OnCloseLevel -= CloseLevel;
     }
 
@@ -98,34 +101,43 @@ public class TilemapBrushes : MonoBehaviour
         whiteWin.CrossFadeAlpha(alpha, time, false);
     }
 
-    private void StartLimits(int level)
+    private void StartLimits(int level, bool avalible)
     {
+        if (avalible)
+            return;
+
         timeLeft = data.levels[level].timer;
         prevSecs = -1;
 
         photoshopBorders.enabled = true;
         grid.gameObject.SetActive(true);
 
-        RefillTiles();
-
         SetWinWhite(false, 1, 0);
+
+        RefillTiles().Forget();
     }
 
-    private void RefillTiles()
+    private async UniTaskVoid RefillTiles()
     {
-        Destroy(tilemap.gameObject);
-
-        tilemap = Instantiate(prefab, grid.transform);
+        tilemap = await Extensions.AsyncInstantiate(prefab, grid.transform);
         collider2d = tilemap.GetComponent<TilemapCollider2D>();
         composite = tilemap.GetComponent<CompositeCollider2D>();
+
+        updateComposite = true;
+        started = true;
     }
 
     private void CloseLevel()
     {
+        if (tilemap != null)
+            Destroy(tilemap.gameObject);
+
         photoshopBorders.enabled = false;
         grid.gameObject.SetActive(false);
-
         SetWinWhite(false, 1, 0);
+        timer.text = "--:--";
+
+        started = false;
     }
 
     private void Start()
@@ -135,7 +147,7 @@ public class TilemapBrushes : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.IsPlaying)
+        if (!GameManager.IsPlaying || !started)
             return;
 
         if (timeLeft > 0)
@@ -294,19 +306,19 @@ public class TilemapBrushes : MonoBehaviour
                 case LimiterStatus.Cpu:
                     if (debugLogs)
                         Debug.LogWarning("Limite de CPU!");
-                    Notifications.instance.ShowPopup(data.limiter_textCpu);
+                    Notifications.instance.ShowPopup(data.limiter_textCpu).Forget();
                     break;
 
                 case LimiterStatus.Hdd:
                     if (debugLogs)
                         Debug.LogWarning("Limite de HDD!");
-                    Notifications.instance.ShowPopup(data.limiter_textHdd);
+                    Notifications.instance.ShowPopup(data.limiter_textHdd).Forget();
                     break;
 
                 case LimiterStatus.Ram:
                     if (debugLogs)
                         Debug.LogWarning("Limite de Ram!");
-                    Notifications.instance.ShowPopup(data.limiter_textRam);
+                    Notifications.instance.ShowPopup(data.limiter_textRam).Forget();
                     break;
             }
         }

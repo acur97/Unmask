@@ -34,6 +34,8 @@ public class TilemapBugs : MonoBehaviour
         GameManager.OnPrepareLevel += InstancePatterns;
         GameManager.OnWinLevel += CloseLevel;
         GameManager.OnCloseLevel += CloseLevel;
+
+        CloseLevel();
     }
 
     private void OnDestroy()
@@ -43,11 +45,19 @@ public class TilemapBugs : MonoBehaviour
         GameManager.OnCloseLevel -= CloseLevel;
     }
 
-    private void InstancePatterns(int level)
+    private void InstancePatterns(int level, bool avalible)
+    {
+        if (avalible)
+            return;
+
+        InitBugs(level).Forget();
+    }
+
+    private async UniTaskVoid InitBugs(int level)
     {
         root.gameObject.SetActive(false);
 
-        Instantiate(data.levels[level].patterns[Random.Range(0, data.levels[level].patterns.Length)], root);
+        await Extensions.AsyncInstantiate(data.levels[level].patterns[Random.Range(0, data.levels[level].patterns.Length)], root);
 
         root.localEulerAngles = new Vector3(0, 0, Random.Range(0f, 360f));
 
@@ -67,21 +77,20 @@ public class TilemapBugs : MonoBehaviour
             bug.localEulerAngles = new Vector3(0, 0, Random.Range(0f, 360f));
         }
 
-        DelayInitBugs().Forget();
-    }
-
-    private async UniTaskVoid DelayInitBugs()
-    {
         await UniTask.WaitForSeconds(0.25f);
 
         root.gameObject.SetActive(true);
-
         started = true;
     }
 
     private void CloseLevel()
     {
         root.gameObject.SetActive(false);
+
+        if (root.childCount > 0)
+            Destroy(root.GetChild(0).gameObject);
+
+        started = false;
     }
 
     private void Update()

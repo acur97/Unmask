@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
     {
         instance = this;
 
-        GameManager.OnStartLevel += StartLevel;
+        GameManager.OnPrepareLevel += StartLevel;
         GameManager.OnWinLevel += WinLevel;
         GameManager.OnLoseLevel += LoseLevel;
         GameManager.OnCloseLevel += CloseLevel;
@@ -34,15 +34,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.OnStartLevel -= StartLevel;
+        GameManager.OnPrepareLevel -= StartLevel;
         GameManager.OnWinLevel -= WinLevel;
         GameManager.OnLoseLevel -= LoseLevel;
         GameManager.OnCloseLevel -= CloseLevel;
     }
 
-    private void StartLevel()
+    private void StartLevel(int _, bool avalible)
     {
-        transform.position = startPos;
+        if (!avalible)
+        {
+            transform.position = startPos;
+        }
 
         canMove = true;
     }

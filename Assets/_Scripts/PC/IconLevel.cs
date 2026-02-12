@@ -4,7 +4,7 @@ public class IconLevel : MonoBehaviour
 {
     [SerializeField] private Animator anim;
 
-    private bool isAvalible;
+    public bool isAvalible;
     private int _level;
 
     public void Set(int level, bool avalible)

@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class Notifications : MonoBehaviour
@@ -6,16 +7,14 @@ public class Notifications : MonoBehaviour
 
     [SerializeField] private NotificationPopup prefab;
     [SerializeField] private Transform parent;
-    private NotificationPopup popup;
 
     private void Awake()
     {
         instance = this;
     }
 
-    public void ShowPopup(string message)
+    public async UniTaskVoid ShowPopup(string message)
     {
-        popup = Instantiate(prefab, parent);
-        popup.Init(message);
+        (await Extensions.AsyncInstantiate(prefab, parent)).Init(message);
     }
 }

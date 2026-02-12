@@ -18,6 +18,7 @@ public class StartAnimationManager : MonoBehaviour
     private void Awake()
     {
         nextText.CrossFadeAlpha(0, 0, false);
+        PlayerPrefs.DeleteKey(Hash._LevelIndex);
     }
 
     private async UniTaskVoid Start()

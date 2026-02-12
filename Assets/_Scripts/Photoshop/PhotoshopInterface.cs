@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class PhotoshopInterface : MonoBehaviour
 {
+    [SerializeField] private GameData data;
+
+    [Space]
     [SerializeField] private Image realImage1;
     [SerializeField] private Image realImage2;
 
@@ -16,14 +19,21 @@ public class PhotoshopInterface : MonoBehaviour
 
     private void Awake()
     {
+        GameManager.OnPrepareLevel += Init;
+
         toolsUpPopup.gameObject.SetActive(false);
         toolsUpPopup.alpha = 0;
     }
 
-    public void Init(Sprite image)
+    private void OnDestroy()
     {
-        realImage1.sprite = image;
-        realImage2.sprite = image;
+        GameManager.OnPrepareLevel -= Init;
+    }
+
+    public void Init(int level, bool __)
+    {
+        realImage1.sprite = data.levels[level].image;
+        realImage2.sprite = data.levels[level].image;
     }
 
     public void UpdateTextSize(float value)

@@ -37,6 +37,7 @@ public class PcInterface : MonoBehaviour
         startMenu.gameObject.SetActive(false);
         AudioOptiones(false);
         audio_slider.value = 1;
+        fotoshopIcon.SetActive(false);
     }
 
     private void OnDestroy()
@@ -62,7 +63,7 @@ public class PcInterface : MonoBehaviour
         }
     }
 
-    private void OpenPhotoshop(int _)
+    private void OpenPhotoshop(int _, bool __)
     {
         PhotoshopApp(true);
     }

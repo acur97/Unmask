@@ -23,7 +23,7 @@ public class MusicManager : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnStartLevel += OpenPhotoshop;
+        GameManager.OnPrepareLevel += OpenPhotoshop;
         GameManager.OnCloseLevel += ClosePhotoshop;
 
         secondsPerBeat = 60f / bpm;
@@ -34,11 +34,11 @@ public class MusicManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.OnStartLevel -= OpenPhotoshop;
+        GameManager.OnPrepareLevel -= OpenPhotoshop;
         GameManager.OnCloseLevel -= ClosePhotoshop;
     }
 
-    private void OpenPhotoshop()
+    private void OpenPhotoshop(int _, bool __)
     {
         needsChange = !needsChange;
     }

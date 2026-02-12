@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,9 +9,8 @@ public class GameManager : MonoBehaviour
     public static bool readyIntro = false;
     public static GameManager instance;
 
-    public static Action<int> OnPrepareLevel;
+    public static Action<int, bool> OnPrepareLevel;
     public static int CurrentLevel;
-    public static Action OnStartLevel;
     public static bool IsPlaying;
     public static Action OnWinLevel;
     public static Action OnLoseLevel;
@@ -20,10 +20,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Graphic blackFade;
 
     [Space]
-    [SerializeField] private PcInterface pc;
-    [SerializeField] private PhotoshopInterface photoshop;
-
-    [Space]
     [SerializeField] private Animator tabletAnim;
 
     [Space]
@@ -31,6 +27,14 @@ public class GameManager : MonoBehaviour
     private IconLevel[] icons;
     [SerializeField] private Transform iconParent;
     private int childIcon;
+
+    private int clearedLevelIndex = -1;
+
+    [ContextMenu("Delete playerPrefs")]
+    public void DeletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteKey(Hash._LevelIndex);
+    }
 
     private void Awake()
     {
@@ -48,12 +52,18 @@ public class GameManager : MonoBehaviour
             blackFade.CrossFadeAlpha(0, 0, false);
         }
 
-        icons = new IconLevel[data.levels.Length];
+        SetIcons().Forget();
+    }
+
+    private async UniTaskVoid SetIcons()
+    {
+        clearedLevelIndex = PlayerPrefs.GetInt(Hash._LevelIndex, 0);
+
+        icons = await Extensions.AsyncInstantiate(iconPrefab, data.levels.Length, iconParent);
+
         for (int i = 0; i < icons.Length; i++)
         {
-            icons[i] = Instantiate(iconPrefab, iconParent);
-
-            if (i == 1)
+            if (i <= clearedLevelIndex)
             {
                 icons[i].Set(i, true);
             }
@@ -71,6 +81,8 @@ public class GameManager : MonoBehaviour
 
     public void WinLevel()
     {
+        PlayerPrefs.SetInt(Hash._LevelIndex, CurrentLevel + 1);
+
         IsPlaying = false;
         OnWinLevel?.Invoke();
 
@@ -84,6 +96,7 @@ public class GameManager : MonoBehaviour
     public void LoseLevel()
     {
         IsPlaying = false;
+
         OnLoseLevel?.Invoke();
 
         tabletAnim.SetTrigger(Hash._Close);
@@ -100,10 +113,8 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevel = level;
 
-        photoshop.Init(data.levels[CurrentLevel].image);
+        OnPrepareLevel?.Invoke(CurrentLevel, icons[CurrentLevel].isAvalible && CurrentLevel < clearedLevelIndex);
 
-        OnPrepareLevel?.Invoke(CurrentLevel);
-        OnStartLevel?.Invoke();
         IsPlaying = true;
     }
 }
