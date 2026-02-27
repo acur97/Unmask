@@ -253,11 +253,4 @@ public class CharacterDialogue : MonoBehaviour
             FinishConversation();
         }
     }
-
-    // Cuando el texto persiga al personaje, revisar si esta en la mitad derecha o izquierda
-    // dependiendo de eso, el texto se girara para que este de un lado o del otro, para prevenir
-    // que atraviese la pantalla
-    // hacer lo mismo con arriba o abajo
-    // mover PosX y PosY de acuerdo a cual esquina deberia estar
-    // moverlo con vector2.lerp para darle el suavizado
 }

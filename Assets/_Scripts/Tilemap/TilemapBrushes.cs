@@ -273,7 +273,7 @@ public class TilemapBrushes : MonoBehaviour
         if (secs != prevSecs)
         {
             prevSecs = secs;
-            timer.SetText($"Time left: {minutes}:{secs:00}");
+            timer.SetText($"Tiempo restante: {minutes}:{secs:00}");
         }
         else
         {

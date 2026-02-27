@@ -30,12 +30,6 @@ public class GameManager : MonoBehaviour
 
     private int clearedLevelIndex = -1;
 
-    [ContextMenu("Delete playerPrefs")]
-    public void DeletePlayerPrefs()
-    {
-        PlayerPrefs.DeleteKey(Hash._LevelIndex);
-    }
-
     private void Awake()
     {
         instance = this;
@@ -82,6 +76,7 @@ public class GameManager : MonoBehaviour
     public void WinLevel()
     {
         PlayerPrefs.SetInt(Hash._LevelIndex, CurrentLevel + 1);
+        clearedLevelIndex = PlayerPrefs.GetInt(Hash._LevelIndex, 0);
 
         IsPlaying = false;
         OnWinLevel?.Invoke();

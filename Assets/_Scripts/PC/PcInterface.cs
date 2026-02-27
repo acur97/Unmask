@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PcInterface : MonoBehaviour
@@ -139,5 +140,16 @@ public class PcInterface : MonoBehaviour
         {
             audio_icon.sprite = audio_Sound;
         }
+    }
+
+    public void TurnOff()
+    {
+        Application.Quit();
+    }
+
+    public void Reboot()
+    {
+        PlayerPrefs.DeleteKey(Hash._LevelIndex);
+        SceneManager.LoadScene(0);
     }
 }
