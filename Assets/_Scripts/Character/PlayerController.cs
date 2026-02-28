@@ -42,12 +42,17 @@ public class PlayerController : MonoBehaviour
 
     private void StartLevel(int _, bool avalible)
     {
-        if (!avalible)
+        if (!avalible && !CharacterDialogue.instance.movementDisabled)
         {
-            transform.position = startPos;
+            SetStartPosition();
         }
 
         canMove = true;
+    }
+
+    public void SetStartPosition()
+    {
+        transform.position = startPos;
     }
 
     private void WinLevel()
@@ -75,7 +80,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!canMove)
+        if (!canMove || CharacterDialogue.instance.movementDisabled)
             return;
 
         move = new Vector2(Input.GetAxisRaw(Hash._Horizontal), Input.GetAxisRaw(Hash._Vertical));

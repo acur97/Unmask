@@ -22,6 +22,9 @@ public static class Hash
     public static readonly int _Happy = Animator.StringToHash("Happy");
     public static readonly int _Scared = Animator.StringToHash("Scared");
     public static readonly int _Dead = Animator.StringToHash("Dead");
+
+    public static readonly int _BaseMap = Shader.PropertyToID("_BaseMap");
+    public static readonly int _EmissionMap = Shader.PropertyToID("_EmissionMap");
 }
 
 [Serializable]
@@ -54,7 +57,28 @@ public class GameData : ScriptableObject
 
     [Header("Conversations")]
     public DialogueScriptable dialogue_scared;
+    public DialogueScriptable dialogue_tutorial;
 
     [Space]
     public Level[] levels;
+
+    #region Tutorial
+    public void Tutorial_PlayerPosition_1()
+    {
+        PlayerController.instance.transform.position = new Vector2(43.22f, 5.37f);
+    }
+    public void Tutorial_PlayerPosition_2()
+    {
+        PlayerController.instance.transform.position = new Vector2(60.85f, 2.98f);
+    }
+    public void Tutorial_PlayerPosition_3()
+    {
+        PlayerController.instance.SetStartPosition();
+    }
+
+    public void Tutorial_OpenTutorialLevel()
+    {
+        GameManager.instance.StartLevel(0);
+    }
+    #endregion
 }

@@ -10,6 +10,8 @@ public class PcInterface : MonoBehaviour
     private System.DateTime now;
     private bool systemTimeSpacer = false;
 
+    [SerializeField] private GameObject desktop;
+
     [Header("Photoshop")]
     [SerializeField] private GameObject fotoshopIcon;
     [SerializeField] private Animator fotoshopAnim;
@@ -75,14 +77,22 @@ public class PcInterface : MonoBehaviour
 
         if (on)
         {
+            DesktopOff().Forget();
             fotoshopAnim.SetTrigger(Hash._Open);
         }
         else
         {
+            desktop.SetActive(true);
             GameManager.instance.CloseLevel();
 
             fotoshopAnim.SetTrigger(Hash._Close);
         }
+    }
+
+    private async UniTaskVoid DesktopOff()
+    {
+        await UniTask.WaitForSeconds(0.4f);
+        desktop.SetActive(false);
     }
 
     public void EspotifyIcon(bool on)
@@ -149,6 +159,7 @@ public class PcInterface : MonoBehaviour
 
     public void Reboot()
     {
+        Cursor.visible = true;
         PlayerPrefs.DeleteKey(Hash._LevelIndex);
         SceneManager.LoadScene(0);
     }

@@ -30,14 +30,9 @@ public class TilemapBrushes : MonoBehaviour
     [SerializeField] private Graphic whiteWin;
 
     [Space]
-    [SerializeField] private Vector2 screenOffset;
-    [SerializeField] private Vector2 screenOffsetSize;
-
-    [Space]
     [SerializeField] private PolygonCollider2D photoshopBorders;
 
     [Space]
-    private Vector2 centeredMousePos = Vector2.zero;
     private Vector3Int mouseToTile;
 
     private int px, py;
@@ -147,7 +142,7 @@ public class TilemapBrushes : MonoBehaviour
 
     private void Update()
     {
-        if (!GameManager.IsPlaying || !started)
+        if (!GameManager.IsPlaying || !started || CharacterDialogue.instance.movementDisabled)
             return;
 
         if (timeLeft > 0)
@@ -326,10 +321,7 @@ public class TilemapBrushes : MonoBehaviour
 
     private void SetTileToBlank()
     {
-        centeredMousePos.x = (((RaycastTransform.ScreenPosition.x * screenOffsetSize.x) + screenOffset.x) / 959) * 178;
-        centeredMousePos.y = (((RaycastTransform.ScreenPosition.y * screenOffsetSize.y) + screenOffset.y) / 539) * 100;
-
-        mouseToTile = new Vector3Int(Mathf.RoundToInt(centeredMousePos.x), Mathf.RoundToInt(centeredMousePos.y), 0);
+        mouseToTile = new Vector3Int(Mathf.RoundToInt(RaycastTransform.CenteredMousePos.x), Mathf.RoundToInt(RaycastTransform.CenteredMousePos.y), 0);
         BlankTiles(BrushSize);
 
         WorldTilePosition = new Vector2(mouseToTile.x * grid.cellSize.x, mouseToTile.y * grid.cellSize.y);

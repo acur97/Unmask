@@ -13,36 +13,34 @@ MonoBehaviour:
   m_Name: Game Data
   m_EditorClassIdentifier: Assembly-CSharp::GameData
   limiter_timeToCpu: 4
-  limiter_textCpu: '<color=red><b>"Caution"</b></color> excessive CPU usage!
+  limiter_textCpu: '<color=red><b>"Cuidado"</b></color> la CPU se esta recalentando!
 
 
-
-    Wait
-    for it to cool down'
+    Deja
+    que se enfrie'
   limiter_speedToHdd: 8
-  limiter_textHdd: '<color=red><b>"Heads up"</b></color> your hard drive isn''t that
-    fast!
+  limiter_textHdd: '<color=red><b>"Calma"</b></color> Tu disco duro no va tan rapido!
 
 
-
-    Wait for it to cool down'
+    Mas
+    lento'
   limiter_distanceToRam: 200
-  limiter_textRam: '<color=red><b>"Danger"</b></color> you filled the RAM, patience!
+  limiter_textRam: '<color=red><b>"Peligro"</b></color> llenaste la memoria RAM!
 
 
-
-    Wait
-    for it to cool down'
+    De
+    a poco que esta cara'
   limiter_time: 60
   bugs_closeDistance: 1.25
   bugs_contactDistance: 0.7
   character_speed: 0.06
   dialogue_scared: {fileID: 11400000, guid: 0c70b6f974e866c489c8d08275a0457e, type: 2}
+  dialogue_tutorial: {fileID: 11400000, guid: 96a7e9ce3291ca34db6d8ffad1a37d53, type: 2}
   levels:
   - name: Tutorial
     image: {fileID: 21300000, guid: c48a3f59522c7da459b92067424f51f7, type: 3}
     patterns:
-    - {fileID: 8290596541198575374, guid: 09530c1a7f0ba83408a7f4961d0d6993, type: 3}
+    - {fileID: 1897082694244748876, guid: 08b6d2094f792c84e8c4efa02a30ff48, type: 3}
     timer: 180
   - name: Frog
     image: {fileID: 21300000, guid: 2979f6c2491ca7041b3a893d9ae4f8ec, type: 3}

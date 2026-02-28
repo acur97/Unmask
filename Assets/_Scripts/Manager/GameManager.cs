@@ -68,8 +68,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private async UniTaskVoid Start()
+    {
+        if (clearedLevelIndex == 0)
+        {
+            await UniTask.WaitForSeconds(2);
+            CharacterDialogue.instance.Conversation_Tutorial();
+        }
+    }
+
     public void ResetScene()
     {
+        Cursor.visible = true;
         SceneManager.LoadScene(1);
     }
 

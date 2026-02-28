@@ -8,6 +8,10 @@ public class Notifications : MonoBehaviour
     [SerializeField] private NotificationPopup prefab;
     [SerializeField] private Transform parent;
 
+    [Space]
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip clip;
+
     private void Awake()
     {
         instance = this;
@@ -16,5 +20,6 @@ public class Notifications : MonoBehaviour
     public async UniTaskVoid ShowPopup(string message)
     {
         (await Extensions.AsyncInstantiate(prefab, parent)).Init(message);
+        source.PlayOneShot(clip);
     }
 }

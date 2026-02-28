@@ -4,10 +4,25 @@ using UnityEngine.EventSystems;
 
 public class RaycastTransform : MonoBehaviour
 {
-    public static Vector2 ScreenPosition;
+    public static Vector2 ScreenPosition = Vector2.zero;
+    public static Vector2 CenteredMousePos = Vector2.zero;
 
     [SerializeField] private Camera cam;
     [SerializeField] private float dragThreshold = 5;
+
+    [Space]
+    [SerializeField] private Vector2 screenOffset = new(-1255, -805);
+    [SerializeField] private Vector2 screenOffsetSize = new(1.59f, 1.59f);
+
+    [Header("Mouse")]
+    [SerializeField] private Transform pcMouse;
+    [SerializeField] private Vector2 screenOffset2;
+    [SerializeField] private Vector2 screenOffsetSize2;
+    [SerializeField] private Material pcPointer;
+    [SerializeField] private Texture2D pointerNormal;
+    [SerializeField] private Texture2D pointerSelect;
+    [SerializeField] private Texture2D pointerMask;
+    [SerializeField] private GameObject maskReference;
 
     [Header("Hand")]
     [SerializeField] private Transform handRoot;
@@ -15,7 +30,7 @@ public class RaycastTransform : MonoBehaviour
 
     private Ray ray;
     private readonly RaycastHit[] hits = new RaycastHit[1];
-    private PointerEventData data;
+    private PointerEventData data = new(EventSystem.current);
 
     private GameObject hoverTarget;
     private GameObject pressTarget;
@@ -30,6 +45,14 @@ public class RaycastTransform : MonoBehaviour
     private GameObject newHover;
 
     private readonly Vector3 forward1 = new(0, 0, -0.1f);
+
+    private void Awake()
+    {
+        pcPointer.SetTexture(Hash._BaseMap, pointerNormal);
+        pcPointer.SetTexture(Hash._EmissionMap, pointerNormal);
+
+        pcMouse.GetChild(0).transform.localPosition = Vector2.zero;
+    }
 
     private void Update()
     {
@@ -53,6 +76,13 @@ public class RaycastTransform : MonoBehaviour
             hits[0].textureCoord.x * 1920,
             hits[0].textureCoord.y * 1080);
 
+        CenteredMousePos.x = (((ScreenPosition.x * screenOffsetSize.x) + screenOffset.x) / 959) * 178;
+        CenteredMousePos.y = (((ScreenPosition.y * screenOffsetSize.y) + screenOffset.y) / 539) * 100;
+
+        pcMouse.position = new Vector2(
+            (ScreenPosition.x * screenOffsetSize2.x) + screenOffset2.x,
+            (ScreenPosition.y * screenOffsetSize2.y) + screenOffset2.y);
+
         return true;
     }
 
@@ -60,9 +90,15 @@ public class RaycastTransform : MonoBehaviour
     {
         if (RaycastScreen())
         {
+            Cursor.visible = false;
             UpdatePointer(ScreenPosition);
 
             HandleMove();
+            HandlePressState();
+        }
+        else
+        {
+            Cursor.visible = true;
             HandlePressState();
         }
     }
@@ -94,6 +130,28 @@ public class RaycastTransform : MonoBehaviour
 
         HandleMove_results = RaycastUI();
         newHover = HandleMove_results.Count > 0 ? HandleMove_results[0].gameObject : null;
+
+        if (hoverTarget == null)
+        {
+            pcPointer.SetTexture(Hash._BaseMap, pointerNormal);
+            pcPointer.SetTexture(Hash._EmissionMap, pointerNormal);
+
+            pcMouse.GetChild(0).transform.localPosition = Vector2.zero;
+        }
+        else if (hoverTarget == maskReference)
+        {
+            pcPointer.SetTexture(Hash._BaseMap, pointerMask);
+            pcPointer.SetTexture(Hash._EmissionMap, pointerMask);
+
+            pcMouse.GetChild(0).transform.localPosition = Vector2.zero;
+        }
+        else
+        {
+            pcPointer.SetTexture(Hash._BaseMap, pointerSelect);
+            pcPointer.SetTexture(Hash._EmissionMap, pointerSelect);
+
+            pcMouse.GetChild(0).localPosition = new Vector2(-11.6f, 0);
+        }
 
         if (newHover == hoverTarget)
             return;

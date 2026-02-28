@@ -21,6 +21,10 @@ public class CharacterDialogue : MonoBehaviour
     [SerializeField] private GameObject btnExit;
     [SerializeField] private GameObject btnNext;
 
+    [Space]
+    [SerializeField] private AudioSource source;
+    [SerializeField] private AudioClip clip;
+
     private DialogueScriptable currentDialogue;
     [HideInInspector] public bool movementDisabled = false;
 
@@ -34,6 +38,7 @@ public class CharacterDialogue : MonoBehaviour
     private bool inDialogue = false;
     private bool isAnimating = false;
     private bool isFinished = true;
+    private bool isFirstText = false;
     private bool skipText = false;
     private bool waitForNext = false;
 
@@ -66,7 +71,7 @@ public class CharacterDialogue : MonoBehaviour
         if (!inDialogue)
             return;
 
-        if (!currentDialogue.isRandom && Input.anyKeyDown)
+        if (!currentDialogue.isRandom && Input.GetMouseButtonDown(0))
         {
             if (isAnimating)
             {
@@ -117,6 +122,11 @@ public class CharacterDialogue : MonoBehaviour
         InitConversation(data.dialogue_scared);
     }
 
+    public void Conversation_Tutorial()
+    {
+        InitConversation(data.dialogue_tutorial);
+    }
+
     public void InitConversation(DialogueScriptable dialogueScriptable)
     {
         token?.Cancel();
@@ -127,6 +137,7 @@ public class CharacterDialogue : MonoBehaviour
         //panelRoot.anchoredPosition = Vector2.zero;
 
         inDialogue = true;
+        isFirstText = true;
 
         currentDialogue = dialogueScriptable;
 
@@ -137,6 +148,9 @@ public class CharacterDialogue : MonoBehaviour
         text.text = string.Empty;
 
         root.SetActive(true);
+
+        if (isFirstText)
+            source.PlayOneShot(clip);
 
         tweenId = LeanTween.alphaCanvas(canvasGroup, 1, 0.25f).setOnComplete(InitPanel).id;
     }
@@ -208,6 +222,11 @@ public class CharacterDialogue : MonoBehaviour
 
         PlayerController.instance.SetTalking(true);
 
+        if (isFirstText)
+            isFirstText = false;
+        else
+            source.PlayOneShot(clip);
+
         AnimateText().Forget();
     }
 
@@ -220,7 +239,7 @@ public class CharacterDialogue : MonoBehaviour
             text.text = titleParts[titleIndex];
             titleIndex++;
 
-            await UniTask.Delay(50, cancellationToken: token.Token);
+            await UniTask.Delay(40, cancellationToken: token.Token);
         }
 
         skipText = false;
@@ -235,8 +254,6 @@ public class CharacterDialogue : MonoBehaviour
 
         if (!currentDialogue.isRandom)
         {
-            await UniTask.WaitForSeconds(1, cancellationToken: token.Token);
-
             if (dialogueIndex == currentDialogue.dialogues.Length - 1)
             {
                 btnExit.SetActive(true);
