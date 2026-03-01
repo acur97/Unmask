@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87b64daee5a41349979caf6ddc183ed, type: 3}
+  m_Name: Tutorial
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueScriptable
+  isRandom: 0
+  disableMovement: 1
+  dialogues:
+  - dialogue: "\xA1Hola usuario-kun! Soy Abust, tu antivirus          \n\nTe veo
+      bastante preocupado por tus archivos, todos est\xE1n corruptos, al parecer,
+      un virus infect\xF3 tus archivos, hizo que se da\xF1aran y se vean de esta
+      forma."
+    onStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinish:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogue: "Es muy extra\xF1o, pero creo que puede haber una soluci\xF3n para
+      que recuperes todo."
+    onStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_PlayerPosition_1
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onFinish:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogue: "\xBFNo te parece esto como las mascaras que tu usas al dibujar?         
+      \n\nNo puedo pasar sobre este archivo para liberarlo yo solo, pero quiz\xE1s
+      tu puedas limpiar la mascara con tu l\xE1piz para hacerme camino."
+    onStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_OpenTutorialLevel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_PlayerPosition_2
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onFinish:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogue: "As\xED que ve dibujando sobre el canvas, por esos espacios que limpies
+      podre caminar, para as\xED pasar al otro lado y salvar tu dibujo, Pero ten
+      cuidado!          \n\nHay partes que est\xE1n muy da\xF1adas y si interact\xFAas
+      con \xE9l, no puedo asegurarme que todo vaya bien luego que toques esa zona
+      infectada."
+    onStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_PlayerPosition_3
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onFinish:
+      m_PersistentCalls:
+        m_Calls: []
+  - dialogue: "- Con el Mouse limpias la m\xE1scara     \n- Con las Flechas mueves
+      a Abust     \n- Puedes cambiar el tama\xF1o del pincel "
+    onStart:
+      m_PersistentCalls:
+        m_Calls: []
+    onFinish:
+      m_PersistentCalls:
+        m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []

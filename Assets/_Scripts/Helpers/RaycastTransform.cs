@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class RaycastTransform : MonoBehaviour
 {
@@ -18,11 +19,15 @@ public class RaycastTransform : MonoBehaviour
     [SerializeField] private Transform pcMouse;
     [SerializeField] private Vector2 screenOffset2;
     [SerializeField] private Vector2 screenOffsetSize2;
-    [SerializeField] private Material pcPointer;
-    [SerializeField] private Texture2D pointerNormal;
-    [SerializeField] private Texture2D pointerSelect;
-    [SerializeField] private Texture2D pointerMask;
+    [SerializeField] private Image pcPointer;
+    [SerializeField] private Sprite pointerNormal;
+    [SerializeField] private Sprite pointerSelect;
     [SerializeField] private GameObject maskReference;
+
+    [Space]
+    [SerializeField] private Transform pointerMaskRoot;
+    [SerializeField] private Image pointerMask;
+    [SerializeField] private Material circleSize;
 
     [Header("Hand")]
     [SerializeField] private Transform handRoot;
@@ -48,10 +53,28 @@ public class RaycastTransform : MonoBehaviour
 
     private void Awake()
     {
-        pcPointer.SetTexture(Hash._BaseMap, pointerNormal);
-        pcPointer.SetTexture(Hash._EmissionMap, pointerNormal);
-
+        pcPointer.enabled = true;
+        pointerMask.enabled = false;
+        pcPointer.sprite = pointerNormal;
         pcMouse.GetChild(0).transform.localPosition = Vector2.zero;
+
+        TilemapBrushes.UpdatedBrushSize += UpdateCircle;
+    }
+
+    private void Start()
+    {
+        UpdateCircle();
+    }
+
+    private void OnDestroy()
+    {
+        TilemapBrushes.UpdatedBrushSize -= UpdateCircle;
+    }
+
+    private void UpdateCircle()
+    {
+        pointerMaskRoot.localScale = TilemapBrushes.BrushSize * 0.076f * Vector3.one;
+        circleSize.SetFloat(Hash._Distance, ((TilemapBrushes.BrushSize - 1) * 0.02f) + 0.72f);
     }
 
     private void Update()
@@ -133,23 +156,22 @@ public class RaycastTransform : MonoBehaviour
 
         if (hoverTarget == null)
         {
-            pcPointer.SetTexture(Hash._BaseMap, pointerNormal);
-            pcPointer.SetTexture(Hash._EmissionMap, pointerNormal);
-
+            pcPointer.enabled = true;
+            pointerMask.enabled = false;
+            pcPointer.sprite = pointerNormal;
             pcMouse.GetChild(0).transform.localPosition = Vector2.zero;
         }
         else if (hoverTarget == maskReference)
         {
-            pcPointer.SetTexture(Hash._BaseMap, pointerMask);
-            pcPointer.SetTexture(Hash._EmissionMap, pointerMask);
-
-            pcMouse.GetChild(0).transform.localPosition = Vector2.zero;
+            pcPointer.enabled = false;
+            pointerMask.enabled = true;
+            //pcMouse.GetChild(0).transform.localPosition = Vector2.zero;
         }
         else
         {
-            pcPointer.SetTexture(Hash._BaseMap, pointerSelect);
-            pcPointer.SetTexture(Hash._EmissionMap, pointerSelect);
-
+            pcPointer.enabled = true;
+            pointerMask.enabled = false;
+            pcPointer.sprite = pointerSelect;
             pcMouse.GetChild(0).localPosition = new Vector2(-11.6f, 0);
         }
 

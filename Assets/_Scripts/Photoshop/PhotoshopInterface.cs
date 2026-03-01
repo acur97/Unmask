@@ -39,7 +39,7 @@ public class PhotoshopInterface : MonoBehaviour
     public void UpdateTextSize(float value)
     {
         tmp_sliderSize.text = $"{value} px";
-        TilemapBrushes.BrushSize = (int)value;
+        TilemapBrushes.UpdateBrushSize((int)value);
     }
 
     public void Open_ToolsUp_Popup()

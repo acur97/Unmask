@@ -1032,12 +1032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec10db7f62ab7a4e8564d10a15922d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhotoshopInterface
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
   realImage1: {fileID: 289160993528195220}
   realImage2: {fileID: 1112084095371150831}
   tmp_sliderSize: {fileID: 4559581675081253853}
   toolsUpPopupRect: {fileID: 4954507283537381728}
   toolsUpPopup: {fileID: 4124086749799154003}
+  circleSize: {fileID: 2100000, guid: 405d4b794adc66548b55b51400c7bd5d, type: 2}
 --- !u!223 &2725679834759167992
 Canvas:
   m_ObjectHideFlags: 0
@@ -11339,7 +11340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: e98400b4606b71340acfaa2a47f6308f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}

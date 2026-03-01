@@ -4,11 +4,11 @@ SpriteAtlasImporter:
   externalObjects: {}
   textureSettings:
     serializedVersion: 2
-    anisoLevel: 16
+    anisoLevel: 0
     compressionQuality: 50
     maxTextureSize: 2048
     textureCompression: 0
-    filterMode: 2
+    filterMode: 1
     generateMipMaps: 1
     readable: 0
     crunchedCompression: 0
@@ -20,6 +20,19 @@ SpriteAtlasImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0

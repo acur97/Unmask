@@ -14,6 +14,7 @@ public class CharacterDialogue : MonoBehaviour
     [SerializeField] private GameObject root;
     [SerializeField] private RectTransform panelRoot;
     [SerializeField] private HorizontalLayoutGroup horizontalLayoutGroup;
+    [SerializeField] private GameObject blockRaycast;
 
     [Space]
     [SerializeField] private CanvasGroup canvasGroup;
@@ -127,6 +128,11 @@ public class CharacterDialogue : MonoBehaviour
         InitConversation(data.dialogue_tutorial);
     }
 
+    public void Conversation_CorruptedLevel()
+    {
+        InitConversation(data.dialogue_corruptedLevel);
+    }
+
     public void InitConversation(DialogueScriptable dialogueScriptable)
     {
         token?.Cancel();
@@ -151,6 +157,8 @@ public class CharacterDialogue : MonoBehaviour
 
         if (isFirstText)
             source.PlayOneShot(clip);
+
+        blockRaycast.SetActive(!currentDialogue.isRandom);
 
         tweenId = LeanTween.alphaCanvas(canvasGroup, 1, 0.25f).setOnComplete(InitPanel).id;
     }
@@ -239,7 +247,7 @@ public class CharacterDialogue : MonoBehaviour
             text.text = titleParts[titleIndex];
             titleIndex++;
 
-            await UniTask.Delay(40, cancellationToken: token.Token);
+            await UniTask.Delay(30, cancellationToken: token.Token);
         }
 
         skipText = false;

@@ -23,8 +23,7 @@ public static class Hash
     public static readonly int _Scared = Animator.StringToHash("Scared");
     public static readonly int _Dead = Animator.StringToHash("Dead");
 
-    public static readonly int _BaseMap = Shader.PropertyToID("_BaseMap");
-    public static readonly int _EmissionMap = Shader.PropertyToID("_EmissionMap");
+    public static readonly int _Distance = Shader.PropertyToID("_Distance");
 }
 
 [Serializable]
@@ -58,6 +57,7 @@ public class GameData : ScriptableObject
     [Header("Conversations")]
     public DialogueScriptable dialogue_scared;
     public DialogueScriptable dialogue_tutorial;
+    public DialogueScriptable dialogue_corruptedLevel;
 
     [Space]
     public Level[] levels;

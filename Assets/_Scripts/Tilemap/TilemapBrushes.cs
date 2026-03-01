@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,7 @@ public class TilemapBrushes : MonoBehaviour
 
     public static bool CanDraw = false;
     public static int BrushSize = 1;
+    public static Action UpdatedBrushSize;
     public static Vector3 WorldTilePosition = new();
 
     [Space]
@@ -81,6 +83,12 @@ public class TilemapBrushes : MonoBehaviour
         GameManager.OnPrepareLevel -= StartLimits;
         GameManager.OnWinLevel -= ClearAllTiles;
         GameManager.OnCloseLevel -= CloseLevel;
+    }
+
+    public static void UpdateBrushSize(int value)
+    {
+        BrushSize = value;
+        UpdatedBrushSize?.Invoke();
     }
 
     private void ClearAllTiles()

@@ -26,13 +26,16 @@ public class IconLevel : MonoBehaviour
 
     public void StartLevel()
     {
+        if (GameManager.IsPlaying)
+            return;
+
         if (isAvalible)
         {
             GameManager.instance.StartLevel(_level);
         }
         else
         {
-            Debug.LogWarning("Mensaje del antivirus, de cuidado que aun esta muy corrupto!");
+            CharacterDialogue.instance.Conversation_CorruptedLevel();
         }
     }
 

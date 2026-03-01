@@ -61,15 +61,16 @@ public class StartAnimationManager : MonoBehaviour
 
     private void Update()
     {
-        if (canNext && Input.anyKeyDown)
+        if (Input.GetKeyDown(KeyCode.F1) ||
+            canNext && Input.anyKeyDown)
         {
             count++;
 
-            if (count != 5)
+            if (count < 5)
             {
                 Next();
             }
-            else
+            else if (count == 5)
             {
                 canNext = false;
                 anim.SetTrigger(Hash._Next);

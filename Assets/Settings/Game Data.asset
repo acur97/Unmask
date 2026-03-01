@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Game Data
   m_EditorClassIdentifier: Assembly-CSharp::GameData
   limiter_timeToCpu: 4
-  limiter_textCpu: '<color=red><b>"Cuidado"</b></color> la CPU se esta recalentando!
+  limiter_textCpu: '<color=#FF0000><b>"Cuidado"</b></color> la CPU se esta recalentando!
 
 
     Deja
     que se enfrie'
   limiter_speedToHdd: 8
-  limiter_textHdd: '<color=red><b>"Calma"</b></color> Tu disco duro no va tan rapido!
+  limiter_textHdd: '<color=#B700FF><b>"Calma"</b></color> Tu disco duro no va tan
+    rapido!
 
 
-    Mas
-    lento'
+    Mas lento'
   limiter_distanceToRam: 200
-  limiter_textRam: '<color=red><b>"Peligro"</b></color> llenaste la memoria RAM!
+  limiter_textRam: '<color=#FF5500><b>"Peligro"</b></color> llenaste la memoria RAM!
 
 
     De
@@ -36,6 +36,7 @@ MonoBehaviour:
   character_speed: 0.06
   dialogue_scared: {fileID: 11400000, guid: 0c70b6f974e866c489c8d08275a0457e, type: 2}
   dialogue_tutorial: {fileID: 11400000, guid: 96a7e9ce3291ca34db6d8ffad1a37d53, type: 2}
+  dialogue_corruptedLevel: {fileID: 11400000, guid: c2e4d449e661dab4790f87ec3e556b0e, type: 2}
   levels:
   - name: Tutorial
     image: {fileID: 21300000, guid: c48a3f59522c7da459b92067424f51f7, type: 3}
