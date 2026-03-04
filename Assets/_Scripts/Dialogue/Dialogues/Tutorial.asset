@@ -15,10 +15,9 @@ MonoBehaviour:
   isRandom: 0
   disableMovement: 1
   dialogues:
-  - dialogue: "\xA1Hola usuario-kun! Soy Abust, tu antivirus          \n\nTe veo
-      bastante preocupado por tus archivos, todos est\xE1n corruptos, al parecer,
-      un virus infect\xF3 tus archivos, hizo que se da\xF1aran y se vean de esta
-      forma."
+  - dialogue: "\xA1Hola Usuario-kun! Soy Abust, tu antivirus          \n\nTe veo
+      bastante preocupado por tus archivos, todos est\xE1n corruptos, parece que
+      un virus los infect\xF3 e hizo que se da\xF1aran."
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -26,7 +25,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: "Es muy extra\xF1o, pero creo que puede haber una soluci\xF3n para
-      que recuperes todo."
+      que los recuperes."
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -46,7 +45,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: "\xBFNo te parece esto como las mascaras que tu usas al dibujar?         
-      \n\nNo puedo pasar sobre este archivo para liberarlo yo solo, pero quiz\xE1s
+      \n\nNo puedo pasar sobre el archivo para liberarlo yo solo, pero quiz\xE1s
       tu puedas limpiar la mascara con tu l\xE1piz para hacerme camino."
     onStart:
       m_PersistentCalls:
@@ -78,11 +77,10 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: "As\xED que ve dibujando sobre el canvas, por esos espacios que limpies
-      podre caminar, para as\xED pasar al otro lado y salvar tu dibujo, Pero ten
-      cuidado!          \n\nHay partes que est\xE1n muy da\xF1adas y si interact\xFAas
-      con \xE9l, no puedo asegurarme que todo vaya bien luego que toques esa zona
-      infectada."
+  - dialogue: "As\xED que ve dibujando sobre el canvas, por donde limpies puedes
+      moverme para as\xED pasar al otro lado y salvar tu dibujo, Pero ten cuidado!         
+      \n\nHay partes que est\xE1n muy da\xF1adas y si te acercas, no puedo asegurarme
+      de protegerte!"
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -101,11 +99,67 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: "- Con el Mouse limpias la m\xE1scara     \n- Con las Flechas mueves
-      a Abust     \n- Puedes cambiar el tama\xF1o del pincel "
+  - dialogue: "Puedes cambiar el tama\xF1o del p\xEDncel aqui para yo tener mas espacio
+      para pasar, pero cuidado que asi puedes toparte con corrupciones mas facilmente."
     onStart:
       m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_PlayerPosition_4
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_StartSliderAnimation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    onFinish:
+      m_PersistentCalls:
         m_Calls: []
+  - dialogue: "- Con el Mouse limpias la m\xE1scara     \n- Con las Flechas mueves
+      a Abust     \n- Puedes cambiar el tama\xF1o del pincel    "
+    onStart:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_EndSliderAnimation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 11400000, guid: 376284caac6d38049b8c02680fb3e7a5, type: 2}
+          m_TargetAssemblyTypeName: GameData, Assembly-CSharp
+          m_MethodName: Tutorial_PlayerPosition_Start
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     onFinish:
       m_PersistentCalls:
         m_Calls: []

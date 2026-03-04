@@ -65,6 +65,9 @@ public class CharacterDialogue : MonoBehaviour
         canvasGroup.alpha = 0;
         btnExit.SetActive(false);
         btnNext.SetActive(false);
+
+        movementDisabled = false;
+        inDialogue = false;
     }
 
     private void Update()
@@ -128,9 +131,19 @@ public class CharacterDialogue : MonoBehaviour
         InitConversation(data.dialogue_tutorial);
     }
 
+    public void Conversation_EndTutorial()
+    {
+        InitConversation(data.dialogue_endTutorial);
+    }
+
     public void Conversation_CorruptedLevel()
     {
         InitConversation(data.dialogue_corruptedLevel);
+    }
+
+    public void Conversation_EndGame()
+    {
+        InitConversation(data.dialogue_endGame);
     }
 
     public void InitConversation(DialogueScriptable dialogueScriptable)
@@ -202,9 +215,6 @@ public class CharacterDialogue : MonoBehaviour
     {
         currentDialogue.onEnd?.Invoke();
 
-        movementDisabled = false;
-        inDialogue = false;
-
         tweenId = LeanTween.alphaCanvas(canvasGroup, 0, 0.2f).setOnComplete(DisablePanel).id;
     }
 
@@ -242,12 +252,14 @@ public class CharacterDialogue : MonoBehaviour
     {
         titleIndex = 0;
 
+        await UniTask.NextFrame();
+
         while (!skipText && text.text.Length < title.Length)
         {
             text.text = titleParts[titleIndex];
             titleIndex++;
 
-            await UniTask.Delay(30, cancellationToken: token.Token);
+            await UniTask.Delay(25, cancellationToken: token.Token);
         }
 
         skipText = false;

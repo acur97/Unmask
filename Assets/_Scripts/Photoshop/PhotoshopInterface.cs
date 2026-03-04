@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class PhotoshopInterface : MonoBehaviour
 {
+    public static PhotoshopInterface instance;
+
     [SerializeField] private GameData data;
 
     [Space]
@@ -11,15 +13,25 @@ public class PhotoshopInterface : MonoBehaviour
     [SerializeField] private Image realImage2;
 
     [Space]
+    public Slider sizeSlider;
     [SerializeField] private TextMeshProUGUI tmp_sliderSize;
 
     [Space]
     [SerializeField] private RectTransform toolsUpPopupRect;
     [SerializeField] private CanvasGroup toolsUpPopup;
 
+    [Space]
+    [SerializeField] private GameObject circleClose;
+
     private void Awake()
     {
+        instance = this;
+
         GameManager.OnPrepareLevel += Init;
+        GameManager.OnWinLevel += CircleCloseOn;
+        GameManager.OnCloseLevel += CircleCloseOff;
+
+        CircleCloseOff();
 
         toolsUpPopup.gameObject.SetActive(false);
         toolsUpPopup.alpha = 0;
@@ -28,6 +40,8 @@ public class PhotoshopInterface : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.OnPrepareLevel -= Init;
+        GameManager.OnWinLevel -= CircleCloseOn;
+        GameManager.OnCloseLevel -= CircleCloseOff;
     }
 
     public void Init(int level, bool __)
@@ -68,5 +82,14 @@ public class PhotoshopInterface : MonoBehaviour
     public void SetCanDraw(bool on)
     {
         TilemapBrushes.CanDraw = on;
+    }
+
+    public void CircleCloseOn()
+    {
+        circleClose.SetActive(true);
+    }
+    public void CircleCloseOff()
+    {
+        circleClose.SetActive(false);
     }
 }

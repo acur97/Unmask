@@ -57,12 +57,20 @@ public class GameData : ScriptableObject
     [Header("Conversations")]
     public DialogueScriptable dialogue_scared;
     public DialogueScriptable dialogue_tutorial;
+    public DialogueScriptable dialogue_endTutorial;
     public DialogueScriptable dialogue_corruptedLevel;
+    public DialogueScriptable dialogue_endGame;
 
     [Space]
     public Level[] levels;
 
     #region Tutorial
+    private int animateSliderId;
+
+    public void Tutorial_PlayerPosition_Start()
+    {
+        PlayerController.instance.SetStartPosition();
+    }
     public void Tutorial_PlayerPosition_1()
     {
         PlayerController.instance.transform.position = new Vector2(43.22f, 5.37f);
@@ -73,12 +81,35 @@ public class GameData : ScriptableObject
     }
     public void Tutorial_PlayerPosition_3()
     {
-        PlayerController.instance.SetStartPosition();
+        PlayerController.instance.transform.position = new Vector2(42.2f, 1.1f);
+    }
+    public void Tutorial_PlayerPosition_4()
+    {
+        PlayerController.instance.transform.position = new Vector2(43.52f, 6.06f);
     }
 
     public void Tutorial_OpenTutorialLevel()
     {
         GameManager.instance.StartLevel(0);
+    }
+
+    public void Tutorial_SetHappy()
+    {
+        PlayerController.instance.SetHappy();
+    }
+
+    public void Tutorial_StartSliderAnimation()
+    {
+        animateSliderId = LeanTween.value(1, 10, 2).setLoopPingPong().setOnUpdate(Tutorial_SliderAnimation).id;
+    }
+    private void Tutorial_SliderAnimation(float value)
+    {
+        PhotoshopInterface.instance.sizeSlider.value = value;
+    }
+    public void Tutorial_EndSliderAnimation()
+    {
+        LeanTween.cancel(animateSliderId);
+        PhotoshopInterface.instance.sizeSlider.value = 1;
     }
     #endregion
 }

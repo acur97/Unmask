@@ -96,6 +96,15 @@ public class GameManager : MonoBehaviour
         {
             icons[childIcon].ClearIcon();
         }
+
+        if (CurrentLevel == 0)
+        {
+            CharacterDialogue.instance.Conversation_EndTutorial();
+        }
+        else if (CurrentLevel == data.levels.Length - 1)
+        {
+            CharacterDialogue.instance.Conversation_EndGame();
+        }
     }
 
     public void LoseLevel()

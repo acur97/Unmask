@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         canMove = false;
         move = Vector2.zero;
-        anim.SetTrigger(Hash._Happy);
+        SetHappy();
 
         LeanTween.moveLocalX(gameObject, endXpos, 1);
     }
@@ -141,6 +141,11 @@ public class PlayerController : MonoBehaviour
 
         if (GameManager.IsPlaying)
             anim.SetTrigger(Hash._Idle);
+    }
+
+    public void SetHappy()
+    {
+        anim.SetTrigger(Hash._Happy);
     }
 
     public void SetTalking(bool on)
