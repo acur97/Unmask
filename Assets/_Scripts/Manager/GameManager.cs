@@ -29,10 +29,13 @@ public class GameManager : MonoBehaviour
     private int childIcon;
 
     private int clearedLevelIndex = -1;
+    private bool avalible = false;
 
     private void Awake()
     {
         instance = this;
+
+        QualitySettings.maxQueuedFrames = 1;
 
         if (readyIntro)
         {
@@ -127,7 +130,17 @@ public class GameManager : MonoBehaviour
     {
         CurrentLevel = level;
 
-        OnPrepareLevel?.Invoke(CurrentLevel, icons[CurrentLevel].isAvalible && CurrentLevel < clearedLevelIndex);
+        avalible = icons[CurrentLevel].isAvalible && CurrentLevel < clearedLevelIndex;
+        OnPrepareLevel?.Invoke(CurrentLevel, avalible);
+
+        if (avalible)
+        {
+            CharacterDialogue.instance.Conversation_OpenClearedLevel();
+        }
+        else if (CurrentLevel != 0)
+        {
+            CharacterDialogue.instance.Conversation_OpenCorruptedLevel();
+        }
 
         IsPlaying = true;
     }

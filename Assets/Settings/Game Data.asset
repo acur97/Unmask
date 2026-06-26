@@ -39,6 +39,8 @@ MonoBehaviour:
   dialogue_endTutorial: {fileID: 11400000, guid: eb2132cfaed0d094694489d169783d27, type: 2}
   dialogue_corruptedLevel: {fileID: 11400000, guid: c2e4d449e661dab4790f87ec3e556b0e, type: 2}
   dialogue_endGame: {fileID: 11400000, guid: ce4353878e62a3a48864387f9ed754f5, type: 2}
+  dialogue_openCleared: {fileID: 11400000, guid: 86932f3f967710740a5b0cd7f69cdce6, type: 2}
+  dialogue_openCorrupted: {fileID: 11400000, guid: d25561f147f13fd4a946749f8ef71f35, type: 2}
   levels:
   - name: Tutorial
     image: {fileID: 21300000, guid: c48a3f59522c7da459b92067424f51f7, type: 3}

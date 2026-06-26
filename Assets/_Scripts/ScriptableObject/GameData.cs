@@ -60,6 +60,8 @@ public class GameData : ScriptableObject
     public DialogueScriptable dialogue_endTutorial;
     public DialogueScriptable dialogue_corruptedLevel;
     public DialogueScriptable dialogue_endGame;
+    public DialogueScriptable dialogue_openCleared;
+    public DialogueScriptable dialogue_openCorrupted;
 
     [Space]
     public Level[] levels;

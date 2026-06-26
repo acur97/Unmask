@@ -1,0 +1,358 @@
+{
+    "m_Name": "",
+    "serializedVersion": "2",
+    "m_Version": 0,
+    "m_DeviceRenderer": 2,
+    "m_RuntimePlatform": 2,
+    "m_QualityLevelName": "Default",
+    "m_VariantInfoMap": [
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "2d0c7e9fe30954f47d9f613e1413ec6f"
+            },
+            "second": {
+                "shaderName": "TextMeshPro/Mobile/Distance Field",
+                "shaderAssetGUID": "fe393ace9b354375a9cb14cdbbc28be4",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "7720de7bef1a2f7379b712a2825d6a06"
+            },
+            "second": {
+                "shaderName": "Hidden/Internal-GUITexture",
+                "shaderAssetGUID": "0860a397848c35f488bf42d3c36a3330",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "7dcc8dbc00584ea65358336b84ab114d"
+            },
+            "second": {
+                "shaderName": "Shader Graphs/Lit Dither",
+                "shaderAssetGUID": "0fcb966cec67d0e4ca4152a05a7fa7bb",
+                "shaderAssetLocalIdentifierInFile": 0,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 4,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "86884a1dfbced719b4fe448ec45905f1"
+            },
+            "second": {
+                "shaderName": "Hidden/Universal Render Pipeline/UberPost",
+                "shaderAssetGUID": "e7857e9d0c934dc4f83f270f8447b006",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "_CHROMATIC_ABERRATION",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "83760a767c72dcf87c039968d6a2f22b"
+            },
+            "second": {
+                "shaderName": "Universal Render Pipeline/2D/Sprite-Unlit-Default",
+                "shaderAssetGUID": "13c02b14c4d048fa9653293d54f6e0e1",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "783c4e977353a1d5f4ee0169329f301b"
+            },
+            "second": {
+                "shaderName": "Universal Render Pipeline/Simple Lit",
+                "shaderAssetGUID": "8d2bb70cbf9db8d4da26e15b26e74248",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "EVALUATE_SH_VERTEX",
+                "subShaderIndex": 0,
+                "passIndex": 1,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "b516757b83c1711ae4221205ddeef2ce"
+            },
+            "second": {
+                "shaderName": "Hidden/CoreSRP/CoreCopy",
+                "shaderAssetGUID": "12dc59547ea167a4ab435097dd0f9add",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "DISABLE_TEXTURE2D_X_ARRAY",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "bf243bde6571a45866ec57ca5362d32c"
+            },
+            "second": {
+                "shaderName": "Sprites/Mask",
+                "shaderAssetGUID": "6524269cb433bee42a6f5f0b8ac7278c",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "c526bbf78b9c490babd451bae1dde4f7"
+            },
+            "second": {
+                "shaderName": "Hidden/Universal/CoreBlit",
+                "shaderAssetGUID": "93446b5c5339d4f00b85c159e1159b7c",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 23,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "c59ed7119894b9f932141beb4a48924c"
+            },
+            "second": {
+                "shaderName": "TextMeshPro/Mobile/Distance Field",
+                "shaderAssetGUID": "fe393ace9b354375a9cb14cdbbc28be4",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "UNDERLAY_ON",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "d65aa2678bbcb4568045cf3a664ea526"
+            },
+            "second": {
+                "shaderName": "Shader Graphs/WhiteMask",
+                "shaderAssetGUID": "f6896fba7c08ca94f89899975ce67d14",
+                "shaderAssetLocalIdentifierInFile": 0,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "e416fa76d635c1750fc6aad30df196a4"
+            },
+            "second": {
+                "shaderName": "Shader Graphs/UI Circle",
+                "shaderAssetGUID": "a7f5847a6481b7f4a9b56bdeff5582ce",
+                "shaderAssetLocalIdentifierInFile": 0,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "f1d4ad93e2a625cda780dba28bbfbaf1"
+            },
+            "second": {
+                "shaderName": "Hidden/Universal Render Pipeline/LutBuilderLdr",
+                "shaderAssetGUID": "65df88701913c224d95fc554db28381a",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "07b33b3ba6cd3b1e57a4b89592c60850"
+            },
+            "second": {
+                "shaderName": "Hidden/Universal Render Pipeline/FinalPost",
+                "shaderAssetGUID": "c49e63ed1bbcb334780a3bd19dfed403",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "_DITHERING _FXAA",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "01e94dd8875587644130c9c8e9fd1ea5"
+            },
+            "second": {
+                "shaderName": "Shader Graphs/UI Default HDR",
+                "shaderAssetGUID": "ce0e97d4bd785344b9e0795773412e9e",
+                "shaderAssetLocalIdentifierInFile": 0,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "4129c2691be2e18b8289f8ca4bbbbb18"
+            },
+            "second": {
+                "shaderName": "Universal Render Pipeline/Simple Lit",
+                "shaderAssetGUID": "8d2bb70cbf9db8d4da26e15b26e74248",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "EVALUATE_SH_VERTEX _MAIN_LIGHT_SHADOWS _SHADOWS_SOFT",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "50f3ae03b19a81650b35c12b890cc448"
+            },
+            "second": {
+                "shaderName": "UI/Default",
+                "shaderAssetGUID": "203dea5f7870f4649b7b371a655d12b9",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "UNITY_UI_ALPHACLIP",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "920b9237e51a3c50f1e7e8d3b148b202"
+            },
+            "second": {
+                "shaderName": "UI/Default",
+                "shaderAssetGUID": "203dea5f7870f4649b7b371a655d12b9",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "98a33a3613430844de38371edc485cf8"
+            },
+            "second": {
+                "shaderName": "Shader Graphs/Abust",
+                "shaderAssetGUID": "52a795e678e976d42bd30334b78cfd95",
+                "shaderAssetLocalIdentifierInFile": 0,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 1,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "ba2bb753084001d3f106559af384bec8"
+            },
+            "second": {
+                "shaderName": "Shader Graphs/Lit OnlyWhite",
+                "shaderAssetGUID": "8e59f0f091a94ac44b6a74b2a127b66c",
+                "shaderAssetLocalIdentifierInFile": 0,
+                "keywordNames": "EVALUATE_SH_VERTEX _MAIN_LIGHT_SHADOWS _SHADOWS_SOFT",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "e91561ce158a9588e4493878cb09e7e1"
+            },
+            "second": {
+                "shaderName": "Hidden/BlitCopy",
+                "shaderAssetGUID": "7f98de55a7e99dc4ab9469edbd3040bc",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "e947bf634c685e4767bdc795088d2b30"
+            },
+            "second": {
+                "shaderName": "Universal Render Pipeline/Lit",
+                "shaderAssetGUID": "933532a4fcc9baf4fa0491de14d08ed7",
+                "shaderAssetLocalIdentifierInFile": 4800000,
+                "keywordNames": "EVALUATE_SH_VERTEX _ENVIRONMENTREFLECTIONS_OFF _MAIN_LIGHT_SHADOWS _SHADOWS_SOFT",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        },
+        {
+            "first": {
+                "serializedVersion": "2",
+                "Hash": "f9ab42136ba90c16cff5429623da9112"
+            },
+            "second": {
+                "shaderName": "Shader Graphs/Lit Dither",
+                "shaderAssetGUID": "0fcb966cec67d0e4ca4152a05a7fa7bb",
+                "shaderAssetLocalIdentifierInFile": 0,
+                "keywordNames": "",
+                "subShaderIndex": 0,
+                "passIndex": 0,
+                "graphicsStateInfoSet": []
+            }
+        }
+    ],
+    "m_VertexLayoutInfoMap": [],
+    "m_RenderPassInfoMap": [],
+    "m_RenderStateMap": []
+}

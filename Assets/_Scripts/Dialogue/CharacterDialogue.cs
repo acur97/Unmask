@@ -146,6 +146,16 @@ public class CharacterDialogue : MonoBehaviour
         InitConversation(data.dialogue_endGame);
     }
 
+    public void Conversation_OpenClearedLevel()
+    {
+        InitConversation(data.dialogue_openCleared);
+    }
+
+    public void Conversation_OpenCorruptedLevel()
+    {
+        InitConversation(data.dialogue_openCorrupted);
+    }
+
     public void InitConversation(DialogueScriptable dialogueScriptable)
     {
         token?.Cancel();
