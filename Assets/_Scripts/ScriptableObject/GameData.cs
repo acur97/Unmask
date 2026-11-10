@@ -45,7 +45,6 @@ public class GameData : ScriptableObject
     [TextArea] public string limiter_textHdd;
     public float limiter_distanceToRam;
     [TextArea] public string limiter_textRam;
-    public float limiter_time;
 
     [Header("Bugs")]
     public float bugs_closeDistance;

@@ -58,8 +58,7 @@ public class PhotoshopInterface : MonoBehaviour
 
     public void Open_ToolsUp_Popup()
     {
-        Vector2 position = new(RaycastTransform.ScreenPosition.x, -54);
-        toolsUpPopupRect.anchoredPosition = position;
+        toolsUpPopupRect.anchoredPosition = new(RaycastTransform.ScreenPosition.x, -54);
 
         for (int i = 0; i < toolsUpPopupRect.childCount; i++)
         {
