@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -57,10 +58,10 @@ public class PcInterface : MonoBehaviour
     {
         while (Application.isPlaying)
         {
-            now = System.DateTime.Now;
+            now = DateTime.Now;
             systemTimeSpacer = !systemTimeSpacer;
 
-            systemTime.text = $"{now:hh}{(systemTimeSpacer ? ":" : " ")}{now.Minute} {now:tt}\r\n{now.Day}/{now.Month:00}/{now.Year}";
+            systemTime.SetText($"{now.Hour}{(systemTimeSpacer ? ":" : " ")}{now.Minute:00} {now.ToString("tt").Replace(" ", string.Empty)}{Environment.NewLine}{now.Day}/{now.Month:00}/{now.Year}");
 
             await UniTask.WaitForSeconds(1, cancellationToken: destroyCancellationToken);
         }

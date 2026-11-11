@@ -16,6 +16,15 @@ MonoBehaviour:
   disableMovement: 0
   dialogues:
   - dialogue: "\xA1Ten cuidado usuario-kun!"
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 2412767019008
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -23,6 +32,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Cuidado!!!
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 2494430117888
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -30,6 +48,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: "\xA1Una corrupci\xF3n!"
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 2557353066496
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -37,6 +64,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Oooh noo ...
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 2639943106560
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -44,6 +80,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Hasta aqui llegamos usuario-kun :c
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 2713729302528
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -51,6 +96,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: "\xA1Usuario-kun!"
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 2800220045312
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -58,6 +112,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Tengo miedooo TnT
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 2945040973824
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -65,6 +128,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: ":\xB4c"
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3039609946112
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -72,6 +144,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: "Usuario-kun.... detente! ( / \xB0\u0414 \xB0;) /"
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3084979732480
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -81,3 +162,6 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []

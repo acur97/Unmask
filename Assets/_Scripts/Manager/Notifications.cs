@@ -1,5 +1,6 @@
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public class Notifications : MonoBehaviour
 {
@@ -17,9 +18,9 @@ public class Notifications : MonoBehaviour
         instance = this;
     }
 
-    public async UniTaskVoid ShowPopup(string message)
+    public async UniTaskVoid ShowPopup(LocalizedString message)
     {
-        (await Extensions.AsyncInstantiate(prefab, parent)).Init(message);
+        (await Extensions.AsyncInstantiate(prefab, parent)).Init(await message.GetLocalizedStringAsync());
         source.PlayOneShot(clip);
     }
 }

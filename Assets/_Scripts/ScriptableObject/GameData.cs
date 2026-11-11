@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Localization;
 
 public static class Hash
 {
@@ -30,6 +31,7 @@ public static class Hash
 public struct Level
 {
     public string name;
+    public string fileName;
     public Sprite image;
     public GameObject[] patterns;
     public float timer;
@@ -38,13 +40,19 @@ public struct Level
 [CreateAssetMenu(fileName = "Game Data", menuName = "Scriptable Objects/Game Data", order = 0)]
 public class GameData : ScriptableObject
 {
+    public Level[] levels;
+
     [Header("Limiters")]
     public float limiter_timeToCpu;
-    [TextArea] public string limiter_textCpu;
+    public LocalizedString limiter_textCpu;
+
+    [Space]
     public float limiter_speedToHdd;
-    [TextArea] public string limiter_textHdd;
+    public LocalizedString limiter_textHdd;
+
+    [Space]
     public float limiter_distanceToRam;
-    [TextArea] public string limiter_textRam;
+    public LocalizedString limiter_textRam;
 
     [Header("Bugs")]
     public float bugs_closeDistance;
@@ -61,9 +69,6 @@ public class GameData : ScriptableObject
     public DialogueScriptable dialogue_endGame;
     public DialogueScriptable dialogue_openCleared;
     public DialogueScriptable dialogue_openCorrupted;
-
-    [Space]
-    public Level[] levels;
 
     #region Tutorial
     private int animateSliderId;

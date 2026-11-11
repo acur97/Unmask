@@ -1,16 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class IconLevel : MonoBehaviour
 {
     [SerializeField] private Animator anim;
+    [SerializeField] private TextMeshProUGUI title;
 
     public bool isAvalible;
     private int _level;
 
-    public void Set(int level, bool avalible)
+    public void Set(int level, bool avalible, string iconTitle)
     {
         _level = level;
         isAvalible = avalible;
+        title.SetText(iconTitle);
 
         if (avalible)
         {

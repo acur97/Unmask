@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Photoshop_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: ece0ee6a9478b3046ad9b1050383b8e7, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 163332709167923432
+  m_TableData:
+  - m_Id: 1151770492928
+    m_Localized: Archivo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2401295597568
+    m_Localized: "Edici\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2469360762880
+    m_Localized: Imagen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543172124672
+    m_Localized: Capa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2855844904960
+    m_Localized: Texto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2955484790784
+    m_Localized: "Selecci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3014104383488
+    m_Localized: Filtro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3073109852160
+    m_Localized: Vista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3143821623296
+    m_Localized: Plugins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3288780963840
+    m_Localized: Ventana
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3361141096448
+    m_Localized: Ayuda
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816107405312
+    m_Localized: "Tama\xF1o:"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5219905634304
+    m_Localized: 'Opacidad:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39356943237120
+    m_Localized: '{fileTitle} 100% (Capa 1, RGB/8#)'
+    m_Metadata:
+      m_Items:
+      - rid: 163332709167923432
+  - m_Id: 40018343034880
+    m_Localized: Canales
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40115231457280
+    m_Localized: Rutas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40264661925888
+    m_Localized: Normal
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 163332709167923432
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 39356943237120

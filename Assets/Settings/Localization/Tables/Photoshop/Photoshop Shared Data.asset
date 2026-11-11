@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Photoshop Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Photoshop
+  m_TableCollectionNameGuidString: ece0ee6a9478b3046ad9b1050383b8e7
+  m_Entries:
+  - m_Id: 1151770492928
+    m_Key: ToolsUp_File
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2401295597568
+    m_Key: ToolsUp_Edit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2469360762880
+    m_Key: ToolsUp_Image
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2543172124672
+    m_Key: ToolsUp_Layer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2855844904960
+    m_Key: ToolsUp_Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2955484790784
+    m_Key: ToolsUp_Select
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3014104383488
+    m_Key: ToolsUp_Filter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3073109852160
+    m_Key: ToolsUp_View
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3143821623296
+    m_Key: ToolsUp_Plugins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3288780963840
+    m_Key: ToolsUp_Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3361141096448
+    m_Key: ToolsUp_Help
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40018343034880
+    m_Key: ToolsUp_Channels
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40115231457280
+    m_Key: ToolsUp_Paths
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816107405312
+    m_Key: ToolsUp2_Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5219905634304
+    m_Key: ToolsUp2_Opacity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 39356943237120
+    m_Key: ToolsUp3_FileTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 40264661925888
+    m_Key: ToolsUp_Normal
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 163332699047854489
+  references:
+    version: 2
+    RefIds:
+    - rid: 163332699047854489
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1794376320216

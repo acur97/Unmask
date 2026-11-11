@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Limiters_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 8cff0f2fffe01a64084e58939ea3bbbc, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 32776323072
+    m_Localized: '<color=#FF0000><b>"Caution"</b></color> The CPU is overheating!
+
+
+      Let it cool down'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 63986139136
+    m_Localized: '<color=#B700FF><b>"Calm down"</b></color> Your hard drive isn''t that fast!
+
+
+      Slow down'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 94269014016
+    m_Localized: "<color=#FF5500><b>\"Danger\"</b></color> You\u2019ve filled up the RAM!\n\nTake it easy, this stuff is expensive!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

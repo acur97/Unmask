@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Localization;
 
 [Serializable]
 public struct Dialogue
 {
-    [TextArea] public string dialogue;
+    public LocalizedString text;
     public UnityEvent onStart;
     public UnityEvent onFinish;
 }

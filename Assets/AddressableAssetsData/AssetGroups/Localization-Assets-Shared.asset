@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-Assets-Shared
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-Assets-Shared
+  m_GUID: 2559607896c547f418855865e86809ff
+  m_SerializeEntries:
+  - m_GUID: 532ba69bbaba2fa46b858a4e98ed9e4b
+    m_Address: Assets/Settings/Localization/Tables/Pc/Pc Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: 8cff0f2fffe01a64084e58939ea3bbbc
+    m_Address: Assets/Settings/Localization/Tables/Limiters/Limiters Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: c87d8d59efb9e574c9c2e4e067c97c14
+    m_Address: Assets/Settings/Localization/Tables/Default/Default Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: ece0ee6a9478b3046ad9b1050383b8e7
+    m_Address: Assets/Settings/Localization/Tables/Photoshop/Photoshop Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: f341d0f68137e6942848c85f167e2328
+    m_Address: Assets/Settings/Localization/Tables/Dialogues/Abust/Dialogues Abust Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 26d77026b43fa58479b966d2cb350601, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2e3eb65df1b034444b290e252300b7e7, type: 2}
+    - {fileID: 11400000, guid: 2b872328a1cd656488a0d0f3fc77e442, type: 2}
+    m_SchemaDisplayOrder:
+    - Localization-Assets-Shared_LocalizationGroupSchema
+    - Localization-Assets-Shared_ContentDirectoryGroupSchema
+  m_IncludeInBuild: 1
+  m_IncludeInBuildMigrated: 1

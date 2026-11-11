@@ -16,6 +16,15 @@ MonoBehaviour:
   disableMovement: 0
   dialogues:
   - dialogue: Que bonito!
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 972384305152
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -23,6 +32,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: :3
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1098624466944
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -30,6 +48,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Guauu!
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1199094824960
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -37,6 +64,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Re bonito
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1284352442368
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -44,6 +80,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Que lindo!
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1357027147776
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -53,3 +98,6 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []

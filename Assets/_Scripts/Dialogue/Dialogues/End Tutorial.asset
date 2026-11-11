@@ -15,8 +15,16 @@ MonoBehaviour:
   isRandom: 0
   disableMovement: 1
   dialogues:
-  - dialogue: "Genial salvamos tu dibujo Usuario-kun!     \n\nAhora cierra el programa
-      y vamos por los demas!"
+  - dialogue: "Genial salvamos tu dibujo Usuario-kun!     \n\nAhora cierra el programa y vamos por los demas!"
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 870961840128
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -38,3 +46,6 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []

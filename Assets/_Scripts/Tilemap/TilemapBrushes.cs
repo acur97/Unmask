@@ -1,7 +1,6 @@
 using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
@@ -27,8 +26,6 @@ public class TilemapBrushes : MonoBehaviour
     [SerializeField] private CompositeCollider2D composite;
 
     [Space]
-    [SerializeField] private TextMeshProUGUI timer;
-    private float timeLeft;
     [SerializeField] private Graphic whiteWin;
 
     [Space]
@@ -50,10 +47,6 @@ public class TilemapBrushes : MonoBehaviour
     private bool limitHdd;
     private float distanceToRam;
     private bool limitRam;
-
-    private int minutes;
-    private int secs;
-    private int prevSecs = -1;
 
     private bool started = false;
 
@@ -109,9 +102,6 @@ public class TilemapBrushes : MonoBehaviour
         if (avalible)
             return;
 
-        timeLeft = data.levels[level].timer;
-        prevSecs = -1;
-
         photoshopBorders.enabled = true;
         grid.gameObject.SetActive(true);
 
@@ -138,7 +128,6 @@ public class TilemapBrushes : MonoBehaviour
         photoshopBorders.enabled = false;
         grid.gameObject.SetActive(false);
         SetWinWhite(false, 1, 0);
-        timer.text = "--:--";
 
         started = false;
     }
@@ -152,19 +141,6 @@ public class TilemapBrushes : MonoBehaviour
     {
         if (!GameManager.IsPlaying || !started || CharacterDialogue.instance.movementDisabled)
             return;
-
-        if (timeLeft > 0)
-        {
-            timeLeft -= Time.deltaTime;
-            FormatTime();
-        }
-        else
-        {
-            timer.text = "ERROR 404";
-
-            GameManager.instance.LoseLevel();
-            return;
-        }
 
         if (updateComposite)
         {
@@ -266,22 +242,6 @@ public class TilemapBrushes : MonoBehaviour
         }
 
         CheckStatus();
-    }
-
-    private void FormatTime()
-    {
-        minutes = Mathf.FloorToInt(timeLeft / 60f);
-        secs = Mathf.FloorToInt(timeLeft % 60f);
-
-        if (secs != prevSecs)
-        {
-            prevSecs = secs;
-            timer.SetText($"Tiempo restante: {minutes}:{secs:00}");
-        }
-        else
-        {
-            prevSecs = secs;
-        }
     }
 
     private void CheckStatus()

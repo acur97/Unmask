@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Spanish (es)
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: Localization-String-Tables-Spanish (es)
+  m_GUID: c26f80c815b33214884012866468be7c
+  m_SerializeEntries:
+  - m_GUID: 7278f2f2139fe034d9d1ea2986dcb7ab
+    m_Address: Limiters_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: 884ab11cffabb9e43b5cf873de6ba104
+    m_Address: Pc_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: d21ed043a5144b34695c8d211b1b9d54
+    m_Address: Default_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: e851ccb2ade8d2749ac6144a0c127e41
+    m_Address: Dialogues Abust_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  - m_GUID: f98ca5a97c0c6ec48b0ba13a4416c1fc
+    m_Address: Photoshop_es
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-es
+    FlaggedDuringContentUpdateRestriction: 0
+    m_FolderGuid: 
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: 26d77026b43fa58479b966d2cb350601, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c868282241f87a644ac70929d2f79054, type: 2}
+    - {fileID: 11400000, guid: 703bcc21b1b90cb4fbd41baf0886f4be, type: 2}
+    m_SchemaDisplayOrder:
+    - Localization-String-Tables-Spanish (es)_LocalizationGroupSchema
+    - Localization-String-Tables-Spanish (es)_ContentDirectoryGroupSchema
+  m_IncludeInBuild: 1
+  m_IncludeInBuildMigrated: 1

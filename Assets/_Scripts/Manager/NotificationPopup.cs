@@ -9,7 +9,7 @@ public class NotificationPopup : MonoBehaviour
 
     public void Init(string text)
     {
-        title.text = text;
+        title.SetText(text);
 
         TimeToClose().Forget();
     }

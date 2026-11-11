@@ -16,6 +16,15 @@ MonoBehaviour:
   disableMovement: 0
   dialogues:
   - dialogue: Recuerda las corrupciones!
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1489948835840
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -23,6 +32,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Ve con cuidado
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1645633011712
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -30,6 +48,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: Yo te ire avisando!
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1715094880256
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -37,6 +64,15 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - dialogue: 'Cuidado con esas corrupciones! '
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 1815821090816
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -46,3 +82,6 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []

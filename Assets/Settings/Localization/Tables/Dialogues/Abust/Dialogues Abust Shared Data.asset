@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Dialogues Abust Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Dialogues Abust
+  m_TableCollectionNameGuidString: f341d0f68137e6942848c85f167e2328
+  m_Entries:
+  - m_Id: 59724726272
+    m_Key: CorruptedLevel_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 579684204544
+    m_Key: EndGame_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 698479476736
+    m_Key: EndGame_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 870961840128
+    m_Key: EndTutorial_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 972384305152
+    m_Key: OpenCleared_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1098624466944
+    m_Key: OpenCleared_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1199094824960
+    m_Key: OpenCleared_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1284352442368
+    m_Key: OpenCleared_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357027147776
+    m_Key: OpenCleared_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1489948835840
+    m_Key: OpenCorrupted_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1645633011712
+    m_Key: OpenCorrupted_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715094880256
+    m_Key: OpenCorrupted_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1815821090816
+    m_Key: OpenCorrupted_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2412767019008
+    m_Key: Scared_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2494430117888
+    m_Key: Scared_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557353066496
+    m_Key: Scared_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2639943106560
+    m_Key: Scared_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2713729302528
+    m_Key: Scared_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2800220045312
+    m_Key: Scared_6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2945040973824
+    m_Key: Scared_7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3039609946112
+    m_Key: Scared_8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3084979732480
+    m_Key: Scared_9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3162205257728
+    m_Key: Tutorial_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3349501902848
+    m_Key: Tutorial_2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3429298536448
+    m_Key: Tutorial_3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3535498313728
+    m_Key: Tutorial_4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3798246293504
+    m_Key: Tutorial_5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3900000108544
+    m_Key: Tutorial_6
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 163332711078428915
+  references:
+    version: 2
+    RefIds:
+    - rid: 163332711078428915
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1794423206640

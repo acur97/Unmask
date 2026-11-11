@@ -15,17 +15,32 @@ MonoBehaviour:
   isRandom: 0
   disableMovement: 1
   dialogues:
-  - dialogue: "\xA1Hola Usuario-kun! Soy Abust, tu antivirus          \n\nTe veo
-      bastante preocupado por tus archivos, todos est\xE1n corruptos, parece que
-      un virus los infect\xF3 e hizo que se da\xF1aran."
+  - dialogue: "\xA1Hola Usuario-kun! Soy Abust, tu antivirus          \n\nTe veo bastante preocupado por tus archivos, todos est\xE1n corruptos, parece que un virus los infect\xF3 e hizo que se da\xF1aran."
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3162205257728
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: "Es muy extra\xF1o, pero creo que puede haber una soluci\xF3n para
-      que los recuperes."
+  - dialogue: "Es muy extra\xF1o, pero creo que puede haber una soluci\xF3n para que los recuperes."
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3349501902848
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -44,9 +59,16 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: "\xBFNo te parece esto como las mascaras que tu usas al dibujar?         
-      \n\nNo puedo pasar sobre el archivo para liberarlo yo solo, pero quiz\xE1s
-      tu puedas limpiar la mascara con tu l\xE1piz para hacerme camino."
+  - dialogue: "\xBFNo te parece esto como las mascaras que tu usas al dibujar?          \n\nNo puedo pasar sobre el archivo para liberarlo yo solo, pero quiz\xE1s tu puedas limpiar la mascara con tu l\xE1piz para hacerme camino."
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3429298536448
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -77,10 +99,16 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: "As\xED que ve dibujando sobre el canvas, por donde limpies puedes
-      moverme para as\xED pasar al otro lado y salvar tu dibujo, Pero ten cuidado!         
-      \n\nHay partes que est\xE1n muy da\xF1adas y si te acercas, no puedo asegurarme
-      de protegerte!"
+  - dialogue: "As\xED que ve dibujando sobre el canvas, por donde limpies puedes moverme para as\xED pasar al otro lado y salvar tu dibujo, Pero ten cuidado!          \n\nHay partes que est\xE1n muy da\xF1adas y si te acercas, no puedo asegurarme de protegerte!"
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3535498313728
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -99,8 +127,16 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: "Puedes cambiar el tama\xF1o del p\xEDncel aqui para yo tener mas espacio
-      para pasar, pero cuidado que asi puedes toparte con corrupciones mas facilmente."
+  - dialogue: "Puedes cambiar el tama\xF1o del p\xEDncel aqui para yo tener mas espacio para pasar, pero cuidado que asi puedes toparte con corrupciones mas facilmente."
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3798246293504
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -131,8 +167,16 @@ MonoBehaviour:
     onFinish:
       m_PersistentCalls:
         m_Calls: []
-  - dialogue: "- Con el Mouse limpias la m\xE1scara     \n- Con las Flechas mueves
-      a Abust     \n- Puedes cambiar el tama\xF1o del pincel    "
+  - dialogue: "- Con el Mouse limpias la m\xE1scara     \n- Con las Flechas mueves a Abust     \n- Puedes cambiar el tama\xF1o del pincel    "
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 3900000108544
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls:
@@ -166,3 +210,6 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []

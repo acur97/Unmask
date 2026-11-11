@@ -62,11 +62,11 @@ public class GameManager : MonoBehaviour
         {
             if (i <= clearedLevelIndex)
             {
-                icons[i].Set(i, true);
+                icons[i].Set(i, true, data.levels[i].fileName);
             }
             else
             {
-                icons[i].Set(i, false);
+                icons[i].Set(i, false, data.levels[i].fileName);
             }
         }
     }

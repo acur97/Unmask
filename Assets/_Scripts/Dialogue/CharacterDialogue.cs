@@ -2,6 +2,7 @@ using Cysharp.Threading.Tasks;
 using System.Threading;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 public class CharacterDialogue : MonoBehaviour
@@ -174,7 +175,7 @@ public class CharacterDialogue : MonoBehaviour
 
         btnExit.SetActive(false);
         btnNext.SetActive(false);
-        text.text = string.Empty;
+        text.SetText(string.Empty);
 
         root.SetActive(true);
 
@@ -191,7 +192,7 @@ public class CharacterDialogue : MonoBehaviour
         if (currentDialogue.isRandom)
         {
             dialogueIndex = currentDialogue.dialogues.Length - 1;
-            SetText(currentDialogue.dialogues[Random.Range(0, currentDialogue.dialogues.Length)].dialogue);
+            SetText(currentDialogue.dialogues[Random.Range(0, currentDialogue.dialogues.Length)].text).Forget();
         }
         else
         {
@@ -218,7 +219,7 @@ public class CharacterDialogue : MonoBehaviour
 
         currentDialogue.dialogues[dialogueIndex].onStart?.Invoke();
 
-        SetText(currentDialogue.dialogues[dialogueIndex].dialogue);
+        SetText(currentDialogue.dialogues[dialogueIndex].text).Forget();
     }
 
     private void FinishConversation()
@@ -228,20 +229,20 @@ public class CharacterDialogue : MonoBehaviour
         tweenId = LeanTween.alphaCanvas(canvasGroup, 0, 0.2f).setOnComplete(DisablePanel).id;
     }
 
-    private void SetText(string newText)
+    private async UniTaskVoid SetText(LocalizedString newText)
     {
         isAnimating = true;
         isFinished = false;
 
-        title = newText;
+        title = await newText.GetLocalizedStringAsync();
         titlePart = string.Empty;
-        text.text = titlePart;
-        titleLength = newText.Length;
+        text.SetText(titlePart);
+        titleLength = title.Length;
         titleParts = new string[titleLength];
 
         for (int i = 0; i < titleLength; i++)
         {
-            titlePart += newText[i];
+            titlePart += title[i];
             titleParts[i] = titlePart;
         }
 
@@ -255,18 +256,18 @@ public class CharacterDialogue : MonoBehaviour
         else
             source.PlayOneShot(clip);
 
-        AnimateText().Forget();
+        await AnimateText();
     }
 
-    private async UniTaskVoid AnimateText()
+    private async UniTask AnimateText()
     {
         titleIndex = 0;
 
-        await UniTask.NextFrame();
+        await UniTask.NextFrame(token.Token);
 
         while (!skipText && text.text.Length < title.Length)
         {
-            text.text = titleParts[titleIndex];
+            text.SetText(titleParts[titleIndex]);
             titleIndex++;
 
             await UniTask.Delay(25, cancellationToken: token.Token);
@@ -276,7 +277,7 @@ public class CharacterDialogue : MonoBehaviour
         isAnimating = false;
         isFinished = true;
 
-        text.text = title;
+        text.SetText(title);
 
         PlayerController.instance.SetTalking(false);
 

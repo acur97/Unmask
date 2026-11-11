@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues Abust_es
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: f341d0f68137e6942848c85f167e2328, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 59724726272
+    m_Localized: "Aun esta muy corrupto este archivo     \nMejor intentemos el anterior! "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 579684204544
+    m_Localized: "Lo logramos Usuario-kun!                 \n\nTodos tus dibujos quedaron salvados          \nMuchas gracias :3"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 698479476736
+    m_Localized: Puedes volver a ver tus dibujos en cualquier momento
+    m_Metadata:
+      m_Items: []
+  - m_Id: 870961840128
+    m_Localized: "Genial salvamos tu dibujo Usuario-kun!     \n\nAhora cierra el programa y vamos por los demas!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 972384305152
+    m_Localized: Que bonito!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1098624466944
+    m_Localized: :3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1199094824960
+    m_Localized: Guauu!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1284352442368
+    m_Localized: Re bonito
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1357027147776
+    m_Localized: Que lindo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1489948835840
+    m_Localized: Recuerda las corrupciones!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1645633011712
+    m_Localized: Ve con cuidado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1715094880256
+    m_Localized: Yo te ire avisando!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1815821090816
+    m_Localized: 'Cuidado con esas corrupciones! '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2412767019008
+    m_Localized: "\xA1Ten cuidado usuario-kun!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2494430117888
+    m_Localized: Cuidado!!!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2557353066496
+    m_Localized: "\xA1Una corrupci\xF3n!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2639943106560
+    m_Localized: Oooh noo ...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2713729302528
+    m_Localized: Hasta aqui llegamos usuario-kun :c
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2800220045312
+    m_Localized: "\xA1Usuario-kun!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2945040973824
+    m_Localized: Tengo miedooo TnT
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3039609946112
+    m_Localized: ":\xB4c"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3084979732480
+    m_Localized: "Usuario-kun.... detente! ( / \xB0\u0414 \xB0;) /"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3162205257728
+    m_Localized: "\xA1Hola Usuario-kun! Soy Abust, tu antivirus          \n\nTe veo bastante preocupado por tus archivos, todos est\xE1n corruptos, parece que un virus los infect\xF3 e hizo que se da\xF1aran."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3349501902848
+    m_Localized: "Es muy extra\xF1o, pero creo que puede haber una soluci\xF3n para que los recuperes."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3429298536448
+    m_Localized: "\xBFNo te parece esto como las mascaras que tu usas al dibujar?          \n\nNo puedo pasar sobre el archivo para liberarlo yo solo, pero quiz\xE1s tu puedas limpiar la mascara con tu l\xE1piz para hacerme camino."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3535498313728
+    m_Localized: "As\xED que ve dibujando sobre el canvas, por donde limpies puedes moverme para as\xED pasar al otro lado y salvar tu dibujo, Pero ten cuidado!          \n\nHay partes que est\xE1n muy da\xF1adas y si te acercas, no puedo asegurarme de protegerte!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3798246293504
+    m_Localized: "Puedes cambiar el tama\xF1o del p\xEDncel aqui para yo tener mas espacio para pasar, pero cuidado que asi puedes toparte con corrupciones mas facilmente."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3900000108544
+    m_Localized: "- Con el Mouse limpias la m\xE1scara     \n- Con las Flechas mueves a Abust     \n- Puedes cambiar el tama\xF1o del pincel    "
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

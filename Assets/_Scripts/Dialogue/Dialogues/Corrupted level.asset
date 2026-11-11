@@ -16,6 +16,15 @@ MonoBehaviour:
   disableMovement: 0
   dialogues:
   - dialogue: "Aun esta muy corrupto este archivo     \nMejor intentemos el anterior! "
+    text:
+      m_TableReference:
+        m_TableCollectionName: GUID:f341d0f68137e6942848c85f167e2328
+      m_TableEntryReference:
+        m_KeyId: 59724726272
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
     onStart:
       m_PersistentCalls:
         m_Calls: []
@@ -25,3 +34,6 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []
