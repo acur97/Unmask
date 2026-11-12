@@ -61,7 +61,7 @@ public class PcInterface : MonoBehaviour
             now = DateTime.Now;
             systemTimeSpacer = !systemTimeSpacer;
 
-            systemTime.SetText($"{now.Hour}{(systemTimeSpacer ? ":" : " ")}{now.Minute:00} {now.ToString("tt").Replace(" ", string.Empty)}{Environment.NewLine}{now.Day}/{now.Month:00}/{now.Year}");
+            systemTime.SetText($"{now:hh}{(systemTimeSpacer ? ":" : " ")}{now.Minute:00} {now.ToString("tt").Replace(" ", string.Empty)}{Environment.NewLine}{now.Day}/{now.Month:00}/{now.Year}");
 
             await UniTask.WaitForSeconds(1, cancellationToken: destroyCancellationToken);
         }
