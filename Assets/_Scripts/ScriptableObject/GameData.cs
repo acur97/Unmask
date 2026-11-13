@@ -11,6 +11,7 @@ public static class Hash
 
     public static readonly int _Open = Animator.StringToHash("Open");
     public static readonly int _Close = Animator.StringToHash("Close");
+    public static readonly int _Bug = Animator.StringToHash("Bug");
 
     public static readonly int _Next = Animator.StringToHash("Next");
 

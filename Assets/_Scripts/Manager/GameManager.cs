@@ -144,4 +144,9 @@ public class GameManager : MonoBehaviour
 
         IsPlaying = true;
     }
+
+    public void TriggerBugAnimation()
+    {
+        tabletAnim.SetTrigger(Hash._Bug);
+    }
 }

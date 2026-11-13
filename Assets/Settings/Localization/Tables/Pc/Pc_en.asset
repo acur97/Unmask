@@ -30,6 +30,16 @@ MonoBehaviour:
     m_Localized: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 667394093547520
+    m_Localized: You died Bro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 667504907059200
+    m_Localized: 'All your files have become corrupted, and your pc died
+
+      What will you do about it?'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

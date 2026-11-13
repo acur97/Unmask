@@ -27,6 +27,14 @@ MonoBehaviour:
     m_Key: StartMenu_OffOptions_Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 667394093547520
+    m_Key: Death_1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 667504907059200
+    m_Key: Death_2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

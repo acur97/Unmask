@@ -29,9 +29,15 @@ public class PhotoshopInterface : MonoBehaviour
     [Space]
     [SerializeField] private LocalizeStringEvent fileTitleEvent;
     [SerializeField] private LocalizeStringEvent timerEvent;
+    [SerializeField] private TextMeshProUGUI timer;
+    [SerializeField] private Color timerGoodColor;
+    [SerializeField] private Color timerMidColor;
+    [SerializeField] private Color timerBadColor;
 
     private bool started = false;
     private float timeLeft;
+    private bool timeLeft15 = false;
+    private bool timeLeft5 = false;
     private int minutes;
     private int secs;
     private int prevSecs = -1;
@@ -68,6 +74,19 @@ public class PhotoshopInterface : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             FormatTime();
+
+            if (timeLeft <= 16 && !timeLeft15)
+            {
+                timeLeft15 = true;
+                GameManager.instance.TriggerBugAnimation();
+                timer.color = timerMidColor;
+            }
+            else if (timeLeft <= 6 && !timeLeft5)
+            {
+                timeLeft5 = true;
+                GameManager.instance.TriggerBugAnimation();
+                timer.color = timerBadColor;
+            }
         }
         else
         {
@@ -107,6 +126,7 @@ public class PhotoshopInterface : MonoBehaviour
 
         timeLeft = data.levels[level].timer;
         timerEvent.SetEntry("Programs_TimeLeft");
+        timer.color = timerGoodColor;
         prevSecs = -1;
 
         started = true;
