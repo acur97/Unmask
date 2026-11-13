@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 59724726272
-    m_Localized: "This file is still very corrupt     \r\nLet\u2019s try the previous one instead!"
+    m_Localized: "This file is still very corrupted     \nLet\u2019s try the previous one instead!"
     m_Metadata:
       m_Items: []
   - m_Id: 579684204544
-    m_Localized: "We did it, User-kun!                 \r\n\r\nAll your drawings have been saved          \r\n\r\nThank you so much! :3"
+    m_Localized: "We did it, User-kun!                 \n\nAll your drawings have been saved          \n\nThank you so much! :3"
     m_Metadata:
       m_Items: []
   - m_Id: 698479476736
@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 870961840128
-    m_Localized: "Great, we saved your drawing, User-kun!     \r\n\r\nNow close the program, and let\u2019s go take care of the rest!"
+    m_Localized: "Great, we saved your drawing, User-kun!     \n\nNow close the program, and let\u2019s go take care of the rest!"
     m_Metadata:
       m_Items: []
   - m_Id: 972384305152
@@ -51,7 +51,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1357027147776
-    m_Localized: How lovely!
+    m_Localized: What a beautiful piece!
     m_Metadata:
       m_Items: []
   - m_Id: 1489948835840
@@ -63,7 +63,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 1715094880256
-    m_Localized: "I\u2019ll keep you posted!"
+    m_Localized: "I\u2019ll keep you updated!"
     m_Metadata:
       m_Items: []
   - m_Id: 1815821090816
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2557353066496
-    m_Localized: Corruption!
+    m_Localized: A corrupted part!
     m_Metadata:
       m_Items: []
   - m_Id: 2639943106560
@@ -107,15 +107,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3162205257728
-    m_Localized: "Hello, User-kun! I\u2019m Abust, your antivirus          \r\n\r\nI can see you\u2019re quite worried about your files; they\u2019re all corrupte, it looks like a virus infected them and caused them to become damaged."
+    m_Localized: "Hello, User-kun! I\u2019m Abust, your antivirus          \n\nI can see you\u2019re quite worried about your files; they\u2019re all corrupted, it looks like a virus infected them and caused them to become damaged."
     m_Metadata:
       m_Items: []
   - m_Id: 3349501902848
-    m_Localized: "It\u2019s very strange, but I think there might be a way for you to get them back."
+    m_Localized: "It\u2019s very strange, but I think there might be a way for you to recover it."
     m_Metadata:
       m_Items: []
   - m_Id: 3429298536448
-    m_Localized: "Doesn't this look like the masks you use when you draw?          \n\r\nI can't get past the file to clear it on my own, but perhaps you could use your stylus to clear the mask and open a path for me."
+    m_Localized: "Doesn't this look like the masks you use when you draw?          \n\nI can't get past the file to clear it on my own, but perhaps you could use your pencil to clear the mask and open a path for me."
     m_Metadata:
       m_Items: []
   - m_Id: 3535498313728
